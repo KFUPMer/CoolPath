@@ -12,9 +12,26 @@
   --blue:         #58a6ff;
   --yellow:       #f0a500;
   --red:          #e05252;
+  --purple:       #a855f7;
   --radius:       12px;
   --shadow:       0 8px 32px rgba(0, 0, 0, 0.5);
 }
+
+/* High contrast mode */
+body.high-contrast {
+  --bg:         #000;
+  --surface:    #111;
+  --surface-2:  #1a1a1a;
+  --border:     #fff;
+  --text:       #fff;
+  --text-muted: #ccc;
+  --green:      #00ff99;
+  --blue:       #66b3ff;
+  --yellow:     #ffcc00;
+  --red:        #ff5555;
+  --purple:     #cc88ff;
+}
+body.high-contrast .leaflet-control-zoom a { border: 2px solid #fff !important; }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -153,6 +170,7 @@ body {
 }
 .mode-btn:hover { color: var(--text); background: rgba(255,255,255,0.05); }
 .mode-btn.active { background: var(--green); color: #000; }
+#btn-accessible.active { background: var(--purple); color: #fff; }
 
 .go-btn {
   background: var(--green);
@@ -427,6 +445,75 @@ body {
 .legend-dot.shaded  { background: #00b894; }
 .legend-dot.partial { background: #f0a500; }
 .legend-dot.exposed { background: #e05252; }
+
+/* ── Accessibility info ───────────────────── */
+
+.route-access-info {
+  padding: 8px 14px;
+  font-size: 11px;
+  border-top: 1px solid var(--border);
+  color: var(--purple);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.route-access-info.hidden { display: none; }
+.access-icon { font-size: 14px; }
+
+/* ── Layer Control Panel ──────────────────── */
+
+.layer-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.layer-panel-title {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.layer-toggle input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--green);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.layer-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+.layer-toggle:hover .layer-label { color: var(--text); }
+.layer-toggle input:checked + .layer-label { color: var(--text); font-weight: 600; }
+
+/* ── Density label in corridors ───────────── */
+
+.corridor-density {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+/* ── Legend inaccessible dot ──────────────── */
+.legend-dot.inaccessible {
+  background: #6b7280;
+  border: 2px dashed #9ca3af;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+.legend-access { margin-top: 2px; }
 
 /* ── Leaflet overrides ────────────────────── */
 
