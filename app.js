@@ -130,7 +130,7 @@ function drawBuildingMarkers() {
       direction: 'top',
       offset: [0, -8],
       className: 'building-label',
-    }).addTo(map);
+    });
 
     buildingMarkers.push({ id: b.id, marker });
   });
@@ -151,7 +151,7 @@ function drawLandmarkMarkers() {
       direction: 'top',
       offset: [0, -16],
       className: 'landmark-label',
-    }).addTo(map);
+    });
   });
 }
 
