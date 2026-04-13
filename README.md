@@ -7,16 +7,16 @@
 ## 📸 Screenshots
 
 ### Main Navigator
-![CoolPath Main App](docs/screenshots/main-app.png)
+![CoolPath Main App](docs/screenshots/corridor-detail.png)
 
 ### Coolest Route Active
-![Coolest Route](docs/screenshots/coolest-route.png)
+![Coolest Route](docs/screenshots/shade-plan.png)
 
 ### Shade Infrastructure Plan
-![Shade Plan Page](docs/screenshots/shade-plan.png)
+![Shade Plan Page](docs/screenshots/coolest-route.png)
 
 ### Corridor Detail & Recommendations
-![Corridor Detail](docs/screenshots/corridor-detail.png)
+![Corridor Detail](docs/screenshots/main-app.png)
 
 ---
 
