@@ -2,7 +2,7 @@
 // Confirmed OSM sources: building operator=KFUPM, bus_station nodes
 
 const BUILDINGS = [
-  { id: 'main_gate',    name: 'Main Gate (South)',              coords: [26.2997, 50.1484] },
+  { id: 'main_gate',    name: 'Main Gate — Gate 1 (South)',     coords: [26.2905, 50.1516] },
   { id: 'mall',         name: 'KFUPM Village Mall',             coords: [26.3010, 50.1490] },
   { id: 'bldg24',       name: 'Building 24 (Business)',         coords: [26.3048, 50.1467] },
   { id: 'bldg22',       name: 'Building 22 (CS Dept)',          coords: [26.3057, 50.1465] },
@@ -45,8 +45,8 @@ const PATHS = [
   {
     id: 'p01', from: 'main_gate', to: 'mall',
     name: 'Gate Entry Road',
-    waypoints: [[26.2997,50.1484],[26.3004,50.1487],[26.3010,50.1490]],
-    distance: 148, shadeScore: 25, accessible: true, density: 3, type: 'walk',
+    waypoints: [[26.2905,50.1516],[26.2940,50.1510],[26.2975,50.1500],[26.3010,50.1490]],
+    distance: 1180, shadeScore: 18, accessible: true, density: 3, type: 'walk',
   },
   {
     id: 'p02', from: 'mall', to: 'bldg24',
@@ -57,8 +57,8 @@ const PATHS = [
   {
     id: 'p03', from: 'main_gate', to: 'medical',
     name: 'Clinic Boulevard',
-    waypoints: [[26.2997,50.1484],[26.3025,50.1491],[26.3054,50.1499]],
-    distance: 638, shadeScore: 20, accessible: true, density: 2, type: 'walk',
+    waypoints: [[26.2905,50.1516],[26.2950,50.1510],[26.3000,50.1505],[26.3054,50.1499]],
+    distance: 1720, shadeScore: 18, accessible: true, density: 2, type: 'walk',
   },
   {
     id: 'p04', from: 'bldg24', to: 'bldg22',
