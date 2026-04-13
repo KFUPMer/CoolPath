@@ -5,7 +5,6 @@ let map, tileLayer;
 let routeMode     = 'shortest';
 let allPathLayers = [];   // { pathId, layer }
 let busLayers     = [];   // bus route polylines (always drawn, toggled visible)
-let busStopMarkers = [];
 let routeLayers   = [];
 let buildingMarkers = [];
 let heatLayers    = [];
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   drawWalkPaths();
   drawBusRoutes();
   drawBuildingMarkers();
-  drawBusStops();
   populateCorridorsPanel();
 });
 
@@ -110,23 +108,10 @@ function drawBusRoutes() {
   });
 }
 
-function drawBusStops() {
-  busStopMarkers = [];
-  BUS_STOPS.forEach(stop => {
-    const marker = L.circleMarker(stop.coords, {
-      radius: 7, fillColor: '#f59e0b',
-      color: '#000', weight: 2, fillOpacity: 0,
-    }).addTo(map);
-    marker.bindTooltip(`<b>${stop.name}</b>`, { direction: 'top' });
-    busStopMarkers.push(marker);
-  });
-}
-
 function toggleBusLayer(on) {
   busVisible = on;
   busLayers.forEach(l => l.setStyle({ opacity: on ? 0.85 : 0 }));
-  busStopMarkers.forEach(m => m.setStyle({ fillOpacity: on ? 0.9 : 0, opacity: on ? 1 : 0 }));
-  if (on) announce('Bus routes displayed. Route A (Blue Line) and Route B (Green Line) visible.');
+  if (on) announce('Bus routes displayed. Route A and Route B visible.');
 }
 
 // ─── Building Markers ─────────────────────────────────────────────────────────

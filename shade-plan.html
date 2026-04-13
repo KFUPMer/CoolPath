@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoolPath — Shade Infrastructure Plan</title>
+  <link rel="stylesheet" href="lib/leaflet.css"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Top bar ───────────── */
+    .plan-topbar {
+      height: 60px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+    .back-btn {
+      background: var(--surface-2);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .18s, border-color .18s;
+    }
+    .back-btn:hover { color: var(--text); border-color: var(--green); }
+
+    .plan-title-block { flex: 1; }
+    .plan-title-block h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .plan-title-block p {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .priority-badge {
+      background: var(--red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── Layout ─────────────── */
+    .plan-body {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ────────────── */
+    .sidebar {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .sidebar-section {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+    .sidebar-section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    /* KPI cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .kpi-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .kpi-val {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .kpi-lbl {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    /* Priority list */
+    .priority-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .priority-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: border-color .18s, background .18s;
+    }
+    .priority-item:hover { border-color: var(--green); background: rgba(0,184,148,.05); }
+    .priority-item.selected { border-color: var(--green); background: rgba(0,184,148,.08); }
+
+    .rank-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .rank-1 { background: rgba(224,82,82,.25);  color: var(--red); }
+    .rank-2 { background: rgba(224,82,82,.20);  color: #e0724a; }
+    .rank-3 { background: rgba(240,165,0,.22);  color: var(--yellow); }
+    .rank-4 { background: rgba(240,165,0,.16);  color: #d4a017; }
+    .rank-5 { background: rgba(240,165,0,.12);  color: #c09010; }
+
+    .item-info { flex: 1; min-width: 0; }
+    .item-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .item-segment {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .item-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+      flex-shrink: 0;
+    }
+    .score-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+    .score-crit   { background: rgba(224,82,82,.20);  color: var(--red); }
+    .score-high   { background: rgba(240,165,0,.20);  color: var(--yellow); }
+    .item-dist { font-size: 9px; color: var(--text-muted); }
+
+    /* Detail card */
+    .detail-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      display: none;
+    }
+    .detail-card.visible { display: block; }
+    .detail-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-row span:first-child { color: var(--text-muted); }
+    .detail-row span:last-child  { color: var(--text); font-weight: 600; }
+
+    .rec-box {
+      background: rgba(0,184,148,.08);
+      border: 1px solid rgba(0,184,148,.3);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--green);
+      line-height: 1.6;
+    }
+    .rec-box strong { display: block; margin-bottom: 4px; font-size: 12px; }
+
+    /* Solution types */
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .solution-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+    .solution-icon { font-size: 22px; margin-bottom: 6px; }
+    .solution-name { font-size: 11px; font-weight: 600; color: var(--text); }
+    .solution-desc { font-size: 10px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
+    .solution-cost {
+      font-size: 9px;
+      margin-top: 6px;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Map panel ──────────── */
+    #plan-map { flex: 1; background: var(--bg); }
+
+    /* ── Legend overlay ─────── */
+    .map-legend {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 11px;
+    }
+    .map-legend-title {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .ml-item { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; color: var(--text-muted); }
+    .ml-item:last-child { margin-bottom: 0; }
+    .ml-swatch { width: 28px; height: 5px; border-radius: 3px; flex-shrink: 0; }
+
+    /* Scrollbar */
+    .sidebar::-webkit-scrollbar { width: 5px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="plan-topbar">
+    <a href="index.html" class="back-btn">&#8592; Navigator</a>
+    <div class="plan-title-block">
+      <h1>&#127968; Shade Infrastructure Plan</h1>
+      <p>Priority corridors for shade investment — ranked by traffic exposure score</p>
+    </div>
+    <div class="priority-badge" id="urgent-count">Loading…</div>
+  </header>
+
+  <div class="plan-body">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar">
+
+      <!-- KPIs -->
+      <div class="sidebar-section">
+        <div class="section-label">Campus Overview</div>
+        <div class="kpi-grid" id="kpi-grid">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <!-- Priority corridors -->
+      <div class="sidebar-section">
+        <div class="section-label">Priority Corridors</div>
+        <div class="priority-list" id="priority-list">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <!-- Detail card -->
+      <div class="sidebar-section" id="detail-section" style="display:none">
+        <div class="section-label">Corridor Detail</div>
+        <div class="detail-card visible" id="detail-card">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <!-- Solution types -->
+      <div class="sidebar-section">
+        <div class="section-label">Shade Solutions</div>
+        <div class="solutions-grid">
+          <div class="solution-card">
+            <div class="solution-icon">&#127795;</div>
+            <div class="solution-name">Native Trees</div>
+            <div class="solution-desc">Date palms &amp; Ghaf trees, zero-irrigation once established</div>
+            <div class="solution-cost">Low cost · Permanent</div>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon">&#9906;</div>
+            <div class="solution-name">Shade Sails</div>
+            <div class="solution-desc">HDPE tensile canopies, 95% UV block, modular</div>
+            <div class="solution-cost">Medium cost · Fast install</div>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon">&#127968;</div>
+            <div class="solution-name">Covered Walkway</div>
+            <div class="solution-desc">Pergola-style steel structure with polycarbonate roof</div>
+            <div class="solution-cost">High cost · Best UX</div>
+          </div>
+          <div class="solution-card">
+            <div class="solution-icon">&#127747;</div>
+            <div class="solution-name">Green Wall Trellis</div>
+            <div class="solution-desc">Climbing plants on metal frames along corridors</div>
+            <div class="solution-cost">Low cost · Gradual</div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ── Map ── -->
+    <div style="position:relative;flex:1;min-width:0;">
+      <div id="plan-map"></div>
+
+      <div class="map-legend">
+        <div class="map-legend-title">Priority Level</div>
+        <div class="ml-item"><div class="ml-swatch" style="background:#e05252"></div> Critical (score ≥ 200)</div>
+        <div class="ml-item"><div class="ml-swatch" style="background:#e07828"></div> High (150–199)</div>
+        <div class="ml-item"><div class="ml-swatch" style="background:#f0a500"></div> Moderate (100–149)</div>
+        <div class="ml-item"><div class="ml-swatch" style="background:#7fc97f"></div> Low priority (&lt; 100)</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/leaflet.js"></script>
+  <script src="data/paths.js"></script>
+  <script>
+    // ── Priority score: density × (100 − shadeScore) ─────────────────────────
+    // Higher = more urgent need for shade infrastructure
+    const walkPaths = PATHS.filter(p => p.type === 'walk');
+
+    function priorityScore(path) {
+      return path.density * (100 - path.shadeScore);
+    }
+
+    function priorityColor(score) {
+      if (score >= 200) return '#e05252';
+      if (score >= 150) return '#e07828';
+      if (score >= 100) return '#f0a500';
+      return '#7fc97f';
+    }
+
+    function priorityLabel(score) {
+      if (score >= 200) return 'Critical';
+      if (score >= 150) return 'High';
+      if (score >= 100) return 'Moderate';
+      return 'Low';
+    }
+
+    function shadeRecommendation(path) {
+      const score = priorityScore(path);
+      if (score >= 200) return {
+        rec: 'Immediate intervention required',
+        detail: 'Install covered walkway or shade sails within 1 semester. This corridor is heavily trafficked and nearly fully exposed. Students are at high heat-stress risk during peak hours.',
+        type: 'Covered Walkway + Shade Sails',
+      };
+      if (score >= 150) return {
+        rec: 'High priority — next budget cycle',
+        detail: 'Plant native date palms along the edges and install temporary shade sails. The combination of traffic and exposure makes this a significant welfare concern.',
+        type: 'Native Trees + Shade Sails',
+      };
+      if (score >= 100) return {
+        rec: 'Plan within 2 years',
+        detail: 'Add green trellis walls or additional trees. The current shade is partial — targeted planting would meaningfully improve comfort without major infrastructure cost.',
+        type: 'Native Trees + Green Trellis',
+      };
+      return {
+        rec: 'Low urgency — routine maintenance',
+        detail: 'Existing shade is adequate. Maintain current trees and monitor for degradation seasonally.',
+        type: 'Routine maintenance',
+      };
+    }
+
+    // ── KPIs ─────────────────────────────────────────────────────────────────
+    const scored = walkPaths.map(p => ({ ...p, score: priorityScore(p) }))
+                            .sort((a, b) => b.score - a.score);
+
+    const totalDist   = walkPaths.reduce((s, p) => s + p.distance, 0);
+    const exposedDist = walkPaths.filter(p => p.shadeScore < 40).reduce((s, p) => s + p.distance, 0);
+    const critCount   = scored.filter(p => p.score >= 200).length;
+    const avgShade    = Math.round(walkPaths.reduce((s, p) => s + p.shadeScore, 0) / walkPaths.length);
+
+    document.getElementById('urgent-count').textContent =
+      critCount > 0 ? `${critCount} Critical Corridor${critCount > 1 ? 's' : ''}` : 'No Critical Corridors';
+
+    document.getElementById('kpi-grid').innerHTML = [
+      { val: walkPaths.length,             lbl: 'Corridors analysed', color: 'var(--blue)' },
+      { val: critCount,                    lbl: 'Critical corridors',  color: 'var(--red)' },
+      { val: Math.round(exposedDist) + ' m', lbl: 'Exposed distance',  color: 'var(--yellow)' },
+      { val: avgShade + '%',               lbl: 'Avg shade level',     color: 'var(--green)' },
+    ].map(k => `
+      <div class="kpi-card">
+        <div class="kpi-val" style="color:${k.color}">${k.val}</div>
+        <div class="kpi-lbl">${k.lbl}</div>
+      </div>`).join('');
+
+    // ── Priority list (top 8) ─────────────────────────────────────────────────
+    const TOP_N  = 8;
+    const topPaths = scored.slice(0, TOP_N);
+    let selectedIdx = null;
+    let planMapLayers = [];
+
+    const rankClass = i => ['rank-1','rank-2','rank-3','rank-4','rank-5','rank-5','rank-5','rank-5'][i] || 'rank-5';
+    const scoreClass = s => s >= 200 ? 'score-crit' : 'score-high';
+
+    function renderPriorityList() {
+      document.getElementById('priority-list').innerHTML = topPaths.map((path, i) => {
+        const from = getBuilding(path.from), to = getBuilding(path.to);
+        return `
+          <div class="priority-item${selectedIdx === i ? ' selected' : ''}"
+               onclick="selectCorridor(${i})" tabindex="0"
+               onkeydown="if(event.key==='Enter')selectCorridor(${i})">
+            <div class="rank-badge ${rankClass(i)}">#${i + 1}</div>
+            <div class="item-info">
+              <div class="item-name">${path.name}</div>
+              <div class="item-segment">${from ? from.name : path.from} → ${to ? to.name : path.to}</div>
+            </div>
+            <div class="item-meta">
+              <div class="score-pill ${scoreClass(path.score)}">${path.score}</div>
+              <div class="item-dist">${path.distance} m</div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    function selectCorridor(i) {
+      selectedIdx = i;
+      renderPriorityList();
+
+      const path = topPaths[i];
+      const from = getBuilding(path.from), to = getBuilding(path.to);
+      const rec  = shadeRecommendation(path);
+      const densLabel = ['','Light','Moderate','Heavy'][path.density];
+      const pLabel = priorityLabel(path.score);
+      const pColor = priorityColor(path.score);
+
+      document.getElementById('detail-section').style.display = 'block';
+      document.getElementById('detail-card').innerHTML = `
+        <div class="detail-title">${path.name}</div>
+        <div class="detail-row"><span>Priority Score</span><span style="color:${pColor}">${path.score} — ${pLabel}</span></div>
+        <div class="detail-row"><span>Shade Level</span><span>${path.shadeScore}/100 (${path.shadeScore < 40 ? 'Exposed' : path.shadeScore < 70 ? 'Partial' : 'Shaded'})</span></div>
+        <div class="detail-row"><span>Foot Traffic</span><span>${densLabel}</span></div>
+        <div class="detail-row"><span>Distance</span><span>${path.distance} m</span></div>
+        <div class="detail-row"><span>Wheelchair Accessible</span><span>${path.accessible ? '✅ Yes' : '❌ No'}</span></div>
+        <div class="detail-row"><span>From</span><span>${from ? from.name : path.from}</span></div>
+        <div class="detail-row"><span>To</span><span>${to ? to.name : path.to}</span></div>
+        <div class="detail-row"><span>Recommended Solution</span><span>${rec.type}</span></div>
+        <div class="rec-box">
+          <strong>&#128161; ${rec.rec}</strong>
+          ${rec.detail}
+        </div>`;
+
+      // Highlight on map
+      planMapLayers.forEach(({ layer, path: p, baseColor }) => {
+        const isSelected = p.id === path.id;
+        layer.setStyle({
+          weight: isSelected ? 9 : 5,
+          opacity: isSelected ? 1 : 0.5,
+          color: isSelected ? baseColor : baseColor,
+        });
+        if (isSelected) {
+          layer.bringToFront();
+          planMap.fitBounds(layer.getBounds(), { padding: [100, 100] });
+        }
+      });
+    }
+
+    renderPriorityList();
+
+    // ── Map ───────────────────────────────────────────────────────────────────
+    const planMap = L.map('plan-map', { center: [26.3075, 50.1480], zoom: 15 });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      subdomains: 'abcd', maxZoom: 19,
+    }).addTo(planMap);
+
+    // Draw all walk paths colour-coded by priority
+    walkPaths.forEach(path => {
+      const score = priorityScore(path);
+      const color = priorityColor(score);
+      const isTop = topPaths.find(p => p.id === path.id);
+
+      const layer = L.polyline(path.waypoints, {
+        color, weight: isTop ? 5 : 3,
+        opacity: isTop ? 0.9 : 0.4,
+        lineJoin: 'round', lineCap: 'round',
+      }).addTo(planMap);
+
+      const from = getBuilding(path.from), to = getBuilding(path.to);
+      const densLabel = ['','Light','Moderate','Heavy'][path.density];
+      layer.bindTooltip(`
+        <b>${path.name}</b><br>
+        Priority: <b style="color:${color}">${score} — ${priorityLabel(score)}</b><br>
+        Shade: ${path.shadeScore}/100 &nbsp;|&nbsp; Traffic: ${densLabel}<br>
+        ${from ? from.name : ''} → ${to ? to.name : ''}
+      `, { sticky: true });
+
+      planMapLayers.push({ layer, path, baseColor: color });
+    });
+
+    // Building markers
+    BUILDINGS.forEach(b => {
+      L.circleMarker(b.coords, {
+        radius: 5, fillColor: '#58a6ff',
+        color: '#0d1117', weight: 2, fillOpacity: 0.9,
+      }).addTo(planMap).bindTooltip(b.name, { direction: 'top' });
+    });
+  </script>
+</body>
+</html>

@@ -23,15 +23,6 @@ function getBuilding(id) {
   return BUILDINGS.find(b => b.id === id);
 }
 
-// Bus stops confirmed from OSM bus_station nodes within KFUPM campus
-const BUS_STOPS = [
-  { id: 'bs_south',   name: 'Bus Stop — South Gate',       coords: [26.3010, 50.1490] },
-  { id: 'bs_medical', name: 'Bus Stop — Medical',          coords: [26.3059, 50.1493] },
-  { id: 'bs_eng',     name: 'Bus Stop — Engineering',      coords: [26.3083, 50.1456] },
-  { id: 'bs_central', name: 'Bus Stop — Central',          coords: [26.3110, 50.1482] },
-  { id: 'bs_north',   name: 'Bus Stop — North (Masjid)',   coords: [26.3149, 50.1467] },
-  { id: 'bs_admin',   name: 'Bus Stop — Admin',            coords: [26.3139, 50.1499] },
-];
 
 // shadeScore: 0 = fully exposed, 100 = fully shaded
 // accessible: wheelchair-friendly
@@ -182,6 +173,44 @@ const PATHS = [
     name: 'North Link',
     waypoints: [[26.3082,50.1450],[26.3095,50.1469],[26.3108,50.1487]],
     distance: 474, shadeScore: 42, accessible: true, density: 1, type: 'walk',
+  },
+
+  // ── Low-density alternative paths ────────────────────────────────────────────
+  {
+    id: 'p25', from: 'bldg22', to: 'bldg11',
+    name: 'Quiet Sports Diagonal',
+    waypoints: [[26.3057,50.1465],[26.3054,50.1460],[26.3052,50.1455]],
+    distance: 120, shadeScore: 55, accessible: true, density: 1, type: 'walk',
+  },
+  {
+    id: 'p26', from: 'bldg76', to: 'bldg42',
+    name: 'Petroleum–Classrooms Cut',
+    waypoints: [[26.3056,50.1479],[26.3082,50.1483],[26.3108,50.1487]],
+    distance: 380, shadeScore: 60, accessible: true, density: 1, type: 'walk',
+  },
+  {
+    id: 'p27', from: 'bldg39', to: 'masjid',
+    name: 'Quiet North Corridor',
+    waypoints: [[26.3101,50.1461],[26.3119,50.1461],[26.3138,50.1462]],
+    distance: 415, shadeScore: 30, accessible: true, density: 1, type: 'walk',
+  },
+  {
+    id: 'p28', from: 'bldg54', to: 'bldg58',
+    name: 'East Wing Bypass',
+    waypoints: [[26.3072,50.1544],[26.3110,50.1516],[26.3148,50.1489]],
+    distance: 520, shadeScore: 35, accessible: true, density: 1, type: 'walk',
+  },
+  {
+    id: 'p29', from: 'student_rest', to: 'bldg42',
+    name: 'Cafeteria Side Lane',
+    waypoints: [[26.3105,50.1446],[26.3106,50.1467],[26.3108,50.1487]],
+    distance: 335, shadeScore: 38, accessible: true, density: 2, type: 'walk',
+  },
+  {
+    id: 'p30', from: 'bldg11', to: 'bldg59',
+    name: 'Sports–Engineering Back Road',
+    waypoints: [[26.3052,50.1455],[26.3067,50.1452],[26.3082,50.1450]],
+    distance: 316, shadeScore: 45, accessible: true, density: 1, type: 'walk',
   },
 
   // ── Bus routes (Route A — Blue Line) ─────────────────────────────────────
