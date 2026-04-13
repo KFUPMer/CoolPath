@@ -2,8 +2,8 @@
 // Confirmed OSM sources: building operator=KFUPM, bus_station nodes
 
 const BUILDINGS = [
-  { id: 'main_gate',    name: 'Main Gate — Gate 1 (South)',     coords: [26.2905, 50.1516] },
-  { id: 'mall',         name: 'KFUPM Village Mall',             coords: [26.3010, 50.1490] },
+  { id: 'main_gate',    name: 'Gate 1',                         coords: [26.3091, 50.1496] },
+  { id: 'mall',         name: 'KFUPM Village Mall',             coords: [26.3137, 50.1481] },
   { id: 'bldg24',       name: 'Building 24 (Business)',         coords: [26.3048, 50.1467] },
   { id: 'bldg22',       name: 'Building 22 (CS Dept)',          coords: [26.3057, 50.1465] },
   { id: 'bldg11',       name: 'Building 11 (Sports Hall)',      coords: [26.3052, 50.1455] },
@@ -23,16 +23,13 @@ function getBuilding(id) {
   return BUILDINGS.find(b => b.id === id);
 }
 
-// Notable campus landmarks — shown as named markers for orientation while walking
+// Notable campus landmarks — GPS-verified by user
 const LANDMARKS = [
-  { id: 'lm_tower',       name: 'Water Tower (البرج)',          coords: [26.3090, 50.1470], icon: '🗼' },
-  { id: 'lm_main_plaza',  name: 'Main Plaza',                   coords: [26.3065, 50.1472], icon: '⬡' },
-  { id: 'lm_north_gate',  name: 'North Gate',                   coords: [26.3180, 50.1475], icon: '🔲' },
-  { id: 'lm_east_gate',   name: 'East Gate',                    coords: [26.3090, 50.1560], icon: '🔲' },
-  { id: 'lm_football',    name: 'Football Field',               coords: [26.3070, 50.1435], icon: '⚽' },
-  { id: 'lm_swimming',    name: 'Swimming Pool',                coords: [26.3040, 50.1442], icon: '🏊' },
-  { id: 'lm_parking_s',   name: 'South Parking',               coords: [26.3020, 50.1500], icon: '🅿' },
-  { id: 'lm_quad',        name: 'Engineering Quad',             coords: [26.3080, 50.1462], icon: '⬡' },
+  { id: 'lm_tower',      name: 'KFUPM Tower (البرج)',  coords: [26.3084, 50.1429], icon: '🗼' },
+  { id: 'lm_green',      name: 'Green Fields',          coords: [26.3086, 50.1465], icon: '🟩' },
+  { id: 'lm_volleyball', name: 'Volleyball Fields',     coords: [26.3097, 50.1455], icon: '🏐' },
+  { id: 'lm_gate2',      name: 'Gate 2',                coords: [26.3155, 50.1397], icon: '🚗' },
+  { id: 'lm_gate3',      name: 'Gate 3',                coords: [26.3081, 50.1533], icon: '🚗' },
 ];
 
 
@@ -45,20 +42,20 @@ const PATHS = [
   {
     id: 'p01', from: 'main_gate', to: 'mall',
     name: 'Gate Entry Road',
-    waypoints: [[26.2905,50.1516],[26.2940,50.1510],[26.2975,50.1500],[26.3010,50.1490]],
-    distance: 1180, shadeScore: 18, accessible: true, density: 3, type: 'walk',
+    waypoints: [[26.3091,50.1496],[26.3110,50.1490],[26.3137,50.1481]],
+    distance: 520, shadeScore: 18, accessible: true, density: 3, type: 'walk',
   },
   {
     id: 'p02', from: 'mall', to: 'bldg24',
     name: 'Main Campus Boulevard',
-    waypoints: [[26.3010,50.1490],[26.3029,50.1479],[26.3048,50.1467]],
-    distance: 448, shadeScore: 22, accessible: true, density: 3, type: 'walk',
+    waypoints: [[26.3137,50.1481],[26.3090,50.1474],[26.3048,50.1467]],
+    distance: 990, shadeScore: 22, accessible: true, density: 3, type: 'walk',
   },
   {
     id: 'p03', from: 'main_gate', to: 'medical',
     name: 'Clinic Boulevard',
-    waypoints: [[26.2905,50.1516],[26.2950,50.1510],[26.3000,50.1505],[26.3054,50.1499]],
-    distance: 1720, shadeScore: 18, accessible: true, density: 2, type: 'walk',
+    waypoints: [[26.3091,50.1496],[26.3075,50.1497],[26.3054,50.1499]],
+    distance: 420, shadeScore: 20, accessible: true, density: 2, type: 'walk',
   },
   {
     id: 'p04', from: 'bldg24', to: 'bldg22',
