@@ -174,6 +174,10 @@ function toggleContrast(on) {
   announce(on ? 'High contrast mode enabled.' : 'High contrast mode disabled.');
 }
 
+function toggleMobilePanel() {
+  document.querySelector('.right-col').classList.toggle('mobile-open');
+}
+
 // ─── Screen Reader ────────────────────────────────────────────────────────────
 function announce(msg) {
   const el = document.getElementById('sr-announce');

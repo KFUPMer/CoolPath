@@ -504,3 +504,106 @@ body {
   line-height: 1.5 !important;
 }
 .leaflet-tooltip::before { display: none !important; }
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE  (≤ 768px)
+   ═══════════════════════════════════════════ */
+#mobile-panel-btn {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 768px) {
+
+  /* ── Topbar: 2-row wrap ── */
+  .topbar {
+    height: auto !important;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .brand       { order: 1; flex-shrink: 0; }
+  .map-mode-toggle { order: 2; margin-left: auto; }
+  .plan-btn    { order: 3; padding: 5px 9px; font-size: 10px; }
+
+  .controls {
+    order: 4;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .select-group       { flex: 1; min-width: 0; }
+  .select-group select { min-width: 0; width: 100%; font-size: 12px; }
+
+  .controls-arrow { display: none; } /* save space */
+
+  .mode-toggle { flex-shrink: 0; }
+  .mode-btn    { padding: 5px 8px; font-size: 10px; }
+
+  .go-btn { padding: 6px 12px; font-size: 11px; }
+
+  /* ── Hide desktop panels ── */
+  .corridors-panel { display: none !important; }
+  .right-col       { display: none; }
+  .right-col.mobile-open {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 16px 12px 24px !important;
+    background: var(--surface) !important;
+    border-top: 1px solid var(--border) !important;
+    border-radius: 16px 16px 0 0 !important;
+    z-index: 1002 !important;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.5) !important;
+  }
+
+  /* ── Mobile layers toggle button ── */
+  #mobile-panel-btn {
+    display: block;
+    position: fixed;
+    bottom: 80px;
+    right: 12px;
+    z-index: 1001;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+
+  /* ── Route card: full-width bottom sheet ── */
+  .route-card {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    border-radius: 16px 16px 0 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+
+  /* Push layers btn up when route card is open */
+  .route-card:not(.hidden) ~ #mobile-panel-btn {
+    bottom: calc(55vh + 8px);
+  }
+
+  /* ── Map mode buttons: smaller ── */
+  .map-mode-btn { padding: 4px 8px; font-size: 9px; }
+}
