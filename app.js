@@ -213,7 +213,7 @@ function announce(msg) {
   setTimeout(() => { el.textContent = msg; }, 50);
 }
 
-// ─── Graph & Dijkstra ─────────────────────────────────────────────────────────
+// ─── Graph & A* ───────────────────────────────────────────────────────────────
 function buildGraph(mode) {
   const graph = {};
   BUILDINGS.forEach(b => { graph[b.id] = []; });
@@ -239,32 +239,42 @@ function buildGraph(mode) {
   return graph;
 }
 
-function dijkstra(graph, start, end, weightFn) {
-  const dist = {}, prev = {}, prevEdge = {};
+// Straight-line distance heuristic (metres) between two building IDs
+function heuristic(nodeId, goalId) {
+  const a = getBuilding(nodeId), b = getBuilding(goalId);
+  if (!a || !b) return 0;
+  const dlat = (a.coords[0] - b.coords[0]) * 111000;
+  const dlon = (a.coords[1] - b.coords[1]) * 111000 * Math.cos(a.coords[0] * Math.PI / 180);
+  return Math.sqrt(dlat * dlat + dlon * dlon);
+}
+
+function aStar(graph, start, end, weightFn) {
+  const g = {}, prev = {}, prevEdge = {};
   const visited = new Set();
   Object.keys(graph).forEach(n => {
-    dist[n] = Infinity; prev[n] = null; prevEdge[n] = null;
+    g[n] = Infinity; prev[n] = null; prevEdge[n] = null;
   });
-  dist[start] = 0;
-  const pq = [[0, start]];
+  g[start] = 0;
+  // Priority queue entries: [f = g + h, nodeId]
+  const pq = [[heuristic(start, end), start]];
 
   while (pq.length > 0) {
     pq.sort((a, b) => a[0] - b[0]);
-    const [d, u] = pq.shift();
+    const [, u] = pq.shift();
     if (visited.has(u)) continue;
     visited.add(u);
     if (u === end) break;
     for (const { node: v, edge } of (graph[u] || [])) {
       if (visited.has(v)) continue;
-      const nd = d + weightFn(edge);
-      if (nd < dist[v]) {
-        dist[v] = nd; prev[v] = u; prevEdge[v] = edge;
-        pq.push([nd, v]);
+      const ng = g[u] + weightFn(edge);
+      if (ng < g[v]) {
+        g[v] = ng; prev[v] = u; prevEdge[v] = edge;
+        pq.push([ng + heuristic(v, end), v]);
       }
     }
   }
 
-  if (dist[end] === Infinity) return null;
+  if (g[end] === Infinity) return null;
   const nodes = [], edges = [];
   let cur = end;
   while (cur !== null) {
@@ -302,7 +312,7 @@ function findAndDrawRoute() {
   clearRoute();
 
   const graph  = buildGraph(routeMode);
-  const result = dijkstra(graph, origin, dest, getWeightFn(routeMode));
+  const result = aStar(graph, origin, dest, getWeightFn(routeMode));
 
   if (!result) {
     alert(routeMode === 'accessible'
@@ -412,7 +422,7 @@ function updateRouteCard(nodes, edges) {
   // Coolest comparison
   const compDiv = document.getElementById('route-comparison');
   if (routeMode === 'coolest') {
-    const shortResult = dijkstra(buildGraph('shortest'), nodes[0], nodes[nodes.length - 1], getWeightFn('shortest'));
+    const shortResult = aStar(buildGraph('shortest'), nodes[0], nodes[nodes.length - 1], getWeightFn('shortest'));
     if (shortResult) {
       const shortDist  = shortResult.edges.reduce((s, e) => s + e.distance, 0);
       const shortShade = Math.round(shortResult.edges.reduce((s, e) => s + e.shadeScore, 0) / shortResult.edges.length);

@@ -11,7 +11,7 @@ const BUILDINGS = [
   { id: 'student_rest', name: 'Student Restaurant',             coords: [26.3105491, 50.1446238] },
   { id: 'bldg76',       name: 'Building 76 (Petroleum Eng)',   coords: [26.3055578, 50.1478519] },
   { id: 'medical',      name: 'Medical Center (Bldg 27)',       coords: [26.3054247, 50.1498906] },
-  { id: 'library',      name: 'Library (Bldg 9)',               coords: [26.3078, 50.1503] },
+  { id: 'library',      name: 'Library (Bldg 8)',               coords: [26.3071, 50.1443] },
   { id: 'bldg39',       name: 'Building 39',                    coords: [26.3100979, 50.1461375] },
   { id: 'bldg42',       name: 'Building 42 (Classrooms)',       coords: [26.3107953, 50.1487249] },
   { id: 'masjid',       name: 'Central Masjid',                 coords: [26.3137864, 50.1462610] },
@@ -102,13 +102,13 @@ const PATHS = [
   {
     id: 'p11', from: 'medical', to: 'library',
     name: 'Library Shortcut',
-    waypoints: [[26.3054247,50.1498906],[26.3066,50.1501],[26.3078,50.1503]],
+    waypoints: [[26.3054247,50.1498906],[26.3063,50.1471],[26.3071,50.1443]],
     distance: 267, shadeScore: 65, accessible: true, density: 2, type: 'walk',
   },
   {
     id: 'p12', from: 'library', to: 'bldg42',
     name: 'Library–Classrooms Walk',
-    waypoints: [[26.3078,50.1503],[26.3093,50.1495],[26.3107953,50.1487249]],
+    waypoints: [[26.3071,50.1443],[26.3093,50.1465],[26.3107953,50.1487249]],
     distance: 346, shadeScore: 70, accessible: true, density: 3, type: 'walk',
   },
   {
@@ -120,13 +120,13 @@ const PATHS = [
   {
     id: 'p14', from: 'library', to: 'masjid',
     name: 'Masjid Path',
-    waypoints: [[26.3078,50.1503],[26.3108,50.1483],[26.3137864,50.1462610]],
+    waypoints: [[26.3071,50.1443],[26.3108,50.1453],[26.3137864,50.1462610]],
     distance: 680, shadeScore: 62, accessible: true, density: 3, type: 'walk',
   },
   {
     id: 'p15', from: 'library', to: 'bldg58',
     name: 'North Admin Road',
-    waypoints: [[26.3078,50.1503],[26.3113,50.1496],[26.3148040,50.1488618]],
+    waypoints: [[26.3071,50.1443],[26.3113,50.1466],[26.3148040,50.1488618]],
     distance: 760, shadeScore: 35, accessible: true, density: 1, type: 'walk',
   },
   {
@@ -156,7 +156,7 @@ const PATHS = [
   {
     id: 'p20', from: 'bldg76', to: 'library',
     name: 'Shaded Tree Line',
-    waypoints: [[26.3055578,50.1478519],[26.3067,50.1491],[26.3078,50.1503]],
+    waypoints: [[26.3055578,50.1478519],[26.3063,50.1461],[26.3071,50.1443]],
     distance: 310, shadeScore: 75, accessible: true, density: 2, type: 'walk',
   },
   {
@@ -168,7 +168,7 @@ const PATHS = [
   {
     id: 'p22', from: 'library', to: 'bldg54',
     name: 'East Wing Path',
-    waypoints: [[26.3078,50.1503],[26.3075,50.1524],[26.3072441,50.1543540]],
+    waypoints: [[26.3071,50.1443],[26.3072,50.1494],[26.3072441,50.1543540]],
     distance: 456, shadeScore: 42, accessible: true, density: 1, type: 'walk',
   },
   {
@@ -272,13 +272,13 @@ const PATHS = [
   {
     id: 'b09', from: 'bldg22', to: 'library',
     name: 'Bus B: CS → Library',
-    waypoints: [[26.3057161,50.1464527],[26.3068,50.1484],[26.3078,50.1503]],
+    waypoints: [[26.3057161,50.1464527],[26.3064,50.1454],[26.3071,50.1443]],
     distance: 436, shadeScore: 50, accessible: true, density: 2, type: 'bus',
   },
   {
     id: 'b10', from: 'library', to: 'bldg58',
     name: 'Bus B: Library → Admin',
-    waypoints: [[26.3078,50.1503],[26.3113,50.1496],[26.3148040,50.1488618]],
+    waypoints: [[26.3071,50.1443],[26.3113,50.1466],[26.3148040,50.1488618]],
     distance: 760, shadeScore: 50, accessible: true, density: 1, type: 'bus',
   },
 ];
