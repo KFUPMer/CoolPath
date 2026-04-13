@@ -1,40 +1,60 @@
 // app.js — CoolPath Application Logic
 
 // ─── State ───────────────────────────────────────────────────────────────────
-let map;
-let routeMode    = 'shortest';
-let allPathLayers  = [];   // { pathId, layer, baseLine }
-let routeLayers    = [];   // layers added for active route
-let buildingMarkers = [];  // { id, marker }
-let heatLayers     = [];
-let densityActive  = false;
-let heatmapActive  = false;
-let panelOpen      = true;
+let map, tileLayer;
+let routeMode     = 'shortest';
+let allPathLayers = [];   // { pathId, layer }
+let busLayers     = [];   // bus route polylines (always drawn, toggled visible)
+let busStopMarkers = [];
+let routeLayers   = [];
+let buildingMarkers = [];
+let heatLayers    = [];
+let densityActive = false;
+let busVisible    = false;
+let panelOpen     = true;
+
+const TILES = {
+  dark: {
+    url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+    attr: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  },
+  light: {
+    url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    attr: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  },
+  satellite: {
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    attr: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+  },
+};
 
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initMap();
   populateDropdowns();
-  drawAllPaths();
+  drawWalkPaths();
+  drawBusRoutes();
   drawBuildingMarkers();
+  drawBusStops();
   populateCorridorsPanel();
 });
 
 // ─── Map Setup ────────────────────────────────────────────────────────────────
 function initMap() {
-  map = L.map('map', {
-    center: [26.3075, 50.1480],
-    zoom: 15,
-    zoomControl: true,
-  });
-
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +
-      '&copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19,
+  map = L.map('map', { center: [26.3075, 50.1480], zoom: 15 });
+  tileLayer = L.tileLayer(TILES.dark.url, {
+    attribution: TILES.dark.attr, subdomains: 'abcd', maxZoom: 19,
   }).addTo(map);
+}
+
+function setMapMode(mode) {
+  const t = TILES[mode];
+  map.removeLayer(tileLayer);
+  tileLayer = L.tileLayer(t.url, { attribution: t.attr, subdomains: 'abcd', maxZoom: 19 }).addTo(map);
+  tileLayer.bringToBack();
+  ['dark', 'light', 'satellite'].forEach(m => {
+    document.getElementById('mm-' + m).classList.toggle('active', m === mode);
+  });
 }
 
 function populateDropdowns() {
@@ -48,50 +68,68 @@ function populateDropdowns() {
   destSel.value   = 'library';
 }
 
-// ─── Path Drawing ─────────────────────────────────────────────────────────────
+// ─── Draw Walking Paths ───────────────────────────────────────────────────────
 function shadeColor(score) {
   if (score >= 70) return '#00b894';
   if (score >= 40) return '#f0a500';
   return '#e05252';
 }
 
-function heatColor(heat) {
-  // heat 0=cool, 1=hot
-  if (heat > 0.75) return 'rgba(220,38,38,0.22)';
-  if (heat > 0.55) return 'rgba(234,88,12,0.18)';
-  if (heat > 0.35) return 'rgba(234,179,8,0.14)';
-  return 'rgba(34,197,94,0.10)';
-}
-
-function drawAllPaths() {
+function drawWalkPaths() {
   allPathLayers = [];
-  PATHS.forEach(path => {
+  PATHS.filter(p => p.type === 'walk').forEach(path => {
     const color   = path.accessible ? shadeColor(path.shadeScore) : '#6b7280';
     const dashArr = path.accessible ? null : '8 5';
-
-    const layer = L.polyline(path.waypoints, {
-      color,
-      weight:    4,
-      opacity:   0.75,
-      dashArray: dashArr,
-      lineJoin:  'round',
-      lineCap:   'round',
+    const layer   = L.polyline(path.waypoints, {
+      color, weight: 4, opacity: 0.75, dashArray: dashArr,
+      lineJoin: 'round', lineCap: 'round',
     }).addTo(map);
 
-    const accessTxt = path.accessible ? 'Wheelchair accessible' : 'Not wheelchair accessible';
     const densityTxt = ['', 'Light', 'Moderate', 'Heavy'][path.density];
-
+    const accessTxt  = path.accessible ? 'Wheelchair accessible' : 'Not wheelchair accessible';
     layer.bindTooltip(
       `<b>${path.name}</b><br>` +
       `Shade: ${path.shadeScore}/100 &nbsp;|&nbsp; ${path.distance} m<br>` +
-      `${accessTxt} &nbsp;|&nbsp; ${densityTxt} foot traffic`,
+      `${accessTxt} &nbsp;|&nbsp; ${densityTxt} traffic`,
       { sticky: true }
     );
-
     allPathLayers.push({ pathId: path.id, layer });
   });
 }
 
+// ─── Bus Routes ───────────────────────────────────────────────────────────────
+function drawBusRoutes() {
+  busLayers = [];
+  PATHS.filter(p => p.type === 'bus').forEach(path => {
+    const layer = L.polyline(path.waypoints, {
+      color: '#f59e0b', weight: 4, opacity: 0,
+      dashArray: '10 6', lineJoin: 'round', lineCap: 'round',
+    }).addTo(map);
+    layer.bindTooltip(`<b>${path.name}</b><br>${path.distance} m`, { sticky: true });
+    busLayers.push(layer);
+  });
+}
+
+function drawBusStops() {
+  busStopMarkers = [];
+  BUS_STOPS.forEach(stop => {
+    const marker = L.circleMarker(stop.coords, {
+      radius: 7, fillColor: '#f59e0b',
+      color: '#000', weight: 2, fillOpacity: 0,
+    }).addTo(map);
+    marker.bindTooltip(`<b>${stop.name}</b>`, { direction: 'top' });
+    busStopMarkers.push(marker);
+  });
+}
+
+function toggleBusLayer(on) {
+  busVisible = on;
+  busLayers.forEach(l => l.setStyle({ opacity: on ? 0.85 : 0 }));
+  busStopMarkers.forEach(m => m.setStyle({ fillOpacity: on ? 0.9 : 0, opacity: on ? 1 : 0 }));
+  if (on) announce('Bus routes displayed. Route A (Blue Line) and Route B (Green Line) visible.');
+}
+
+// ─── Building Markers ─────────────────────────────────────────────────────────
 function drawBuildingMarkers() {
   buildingMarkers = [];
   BUILDINGS.forEach(b => {
@@ -105,27 +143,31 @@ function drawBuildingMarkers() {
 }
 
 // ─── Heatmap ──────────────────────────────────────────────────────────────────
+function heatColor(heat) {
+  if (heat > 0.75) return 'rgba(220,38,38,0.22)';
+  if (heat > 0.55) return 'rgba(234,88,12,0.18)';
+  if (heat > 0.35) return 'rgba(234,179,8,0.14)';
+  return 'rgba(34,197,94,0.10)';
+}
+
 function toggleHeatmap(on) {
-  heatmapActive = on;
   if (on) {
     heatLayers = [];
-    PATHS.forEach(path => {
-      const heat   = (100 - path.shadeScore) / 100;
-      const color  = heatColor(heat);
-      const radius = 60 + heat * 100; // meters: larger blob = hotter
+    PATHS.filter(p => p.type === 'walk').forEach(path => {
+      const heat = (100 - path.shadeScore) / 100;
       path.waypoints.forEach(pt => {
         const c = L.circle(pt, {
-          radius, color: 'transparent', fillColor: color,
-          fillOpacity: 1, interactive: false,
+          radius: 60 + heat * 100, color: 'transparent',
+          fillColor: heatColor(heat), fillOpacity: 1, interactive: false,
         }).addTo(map);
         heatLayers.push(c);
       });
     });
-    announce('Urban heatmap layer enabled. Red areas indicate high heat exposure.');
+    announce('Urban heatmap enabled. Red = high heat exposure.');
   } else {
     heatLayers.forEach(l => map.removeLayer(l));
     heatLayers = [];
-    announce('Heatmap layer disabled.');
+    announce('Heatmap disabled.');
   }
 }
 
@@ -135,10 +177,9 @@ function toggleDensity(on) {
   allPathLayers.forEach(({ pathId, layer }) => {
     const path = PATHS.find(p => p.id === pathId);
     if (!path) return;
-    const w = on ? path.density * 3 : 4; // density 1→3px, 2→6px, 3→9px
-    layer.setStyle({ weight: w });
+    layer.setStyle({ weight: on ? path.density * 3 : 4 });
   });
-  if (on) announce('Crowd density overlay enabled. Thicker lines indicate busier corridors.');
+  if (on) announce('Crowd density overlay enabled. Thicker = busier corridor.');
   else    announce('Density overlay disabled.');
 }
 
@@ -156,14 +197,28 @@ function announce(msg) {
 }
 
 // ─── Graph & Dijkstra ─────────────────────────────────────────────────────────
-function buildGraph(accessibleOnly) {
+function buildGraph(mode) {
   const graph = {};
   BUILDINGS.forEach(b => { graph[b.id] = []; });
+
   PATHS.forEach(p => {
-    if (accessibleOnly && !p.accessible) return;
+    const isWalk = p.type === 'walk';
+    const isBus  = p.type === 'bus';
+
+    if (mode === 'accessible' && !p.accessible) return;
+    if (mode === 'bus') {
+      // bus mode: can use both bus AND walking paths
+      // but bus paths are much cheaper per metre
+    } else {
+      if (isBus) return; // walking modes skip bus paths
+    }
+
+    graph[p.from] = graph[p.from] || [];
+    graph[p.to]   = graph[p.to]   || [];
     graph[p.from].push({ node: p.to,   edge: p });
     graph[p.to].push(  { node: p.from, edge: p });
   });
+
   return graph;
 }
 
@@ -203,14 +258,19 @@ function dijkstra(graph, start, end, weightFn) {
   return { nodes, edges };
 }
 
-const shortestWeight   = e => e.distance;
-const coolestWeight    = e => e.distance * (1 + 2.5 * (100 - e.shadeScore) / 100);
-const accessibleWeight = e => e.distance; // filter is in buildGraph
+function getWeightFn(mode) {
+  if (mode === 'coolest')
+    return e => e.distance * (1 + 2.5 * (100 - e.shadeScore) / 100);
+  if (mode === 'bus')
+    // Bus segments cost 3x less per metre (faster travel)
+    return e => e.type === 'bus' ? e.distance * 0.33 : e.distance;
+  return e => e.distance;
+}
 
 // ─── UI Actions ───────────────────────────────────────────────────────────────
 function setMode(mode) {
   routeMode = mode;
-  ['shortest', 'coolest', 'accessible'].forEach(m => {
+  ['shortest', 'coolest', 'accessible', 'bus'].forEach(m => {
     const btn = document.getElementById('btn-' + m);
     btn.classList.toggle('active', m === mode);
     btn.setAttribute('aria-pressed', m === mode ? 'true' : 'false');
@@ -224,16 +284,14 @@ function findAndDrawRoute() {
 
   clearRoute();
 
-  const accessOnly = routeMode === 'accessible';
-  const graph      = buildGraph(accessOnly);
-  const weightFn   = routeMode === 'coolest' ? coolestWeight : shortestWeight;
-  const result     = dijkstra(graph, origin, dest, weightFn);
+  const graph  = buildGraph(routeMode);
+  const result = dijkstra(graph, origin, dest, getWeightFn(routeMode));
 
   if (!result) {
-    const msg = accessOnly
+    alert(routeMode === 'accessible'
       ? 'No wheelchair-accessible route found between these locations.'
-      : 'No route found between these locations.';
-    alert(msg); return;
+      : 'No route found between these locations.');
+    return;
   }
 
   drawRoute(result);
@@ -252,7 +310,8 @@ function drawRoute(result) {
     routeWaypoints.push(...(i === 0 ? pts : pts.slice(1)));
   });
 
-  const color = { shortest: '#58a6ff', coolest: '#00b894', accessible: '#a855f7' }[routeMode];
+  const colors = { shortest: '#58a6ff', coolest: '#00b894', accessible: '#a855f7', bus: '#f59e0b' };
+  const color  = colors[routeMode];
 
   const glow = L.polyline(routeWaypoints, { color, weight: 18, opacity: 0.12, lineJoin: 'round', lineCap: 'round' }).addTo(map);
   const line = L.polyline(routeWaypoints, { color, weight:  6, opacity: 1,    lineJoin: 'round', lineCap: 'round' }).addTo(map);
@@ -274,85 +333,85 @@ function drawRoute(result) {
 
 // ─── Route Card ───────────────────────────────────────────────────────────────
 function updateRouteCard(nodes, edges) {
-  const totalDist = edges.reduce((s, e) => s + e.distance, 0);
-  const avgShade  = Math.round(edges.reduce((s, e) => s + e.shadeScore, 0) / edges.length);
-  const walkMins  = Math.ceil(totalDist / 83);
+  const totalDist  = edges.reduce((s, e) => s + e.distance, 0);
+  const walkEdges  = edges.filter(e => e.type !== 'bus');
+  const busEdges   = edges.filter(e => e.type === 'bus');
+  const avgShade   = walkEdges.length
+    ? Math.round(walkEdges.reduce((s, e) => s + e.shadeScore, 0) / walkEdges.length)
+    : 50;
+  // Travel time: bus at ~25 km/h, walk at ~5 km/h
+  const walkTime = walkEdges.reduce((s, e) => s + e.distance, 0) / 83;
+  const busTime  = busEdges.reduce((s, e) => s + e.distance, 0) / 417;
+  const totalMins = Math.ceil(walkTime + busTime);
   const allAccess = edges.every(e => e.accessible);
-  const avgDens   = (edges.reduce((s, e) => s + e.density, 0) / edges.length).toFixed(1);
 
   document.getElementById('route-card').classList.remove('hidden');
 
-  const colors = { shortest: 'var(--blue)', coolest: 'var(--green)', accessible: 'var(--purple)' };
-  const labels = { shortest: 'Shortest Route', coolest: 'Coolest Route', accessible: 'Accessible Route' };
+  const colors = { shortest:'var(--blue)', coolest:'var(--green)', accessible:'var(--purple)', bus:'var(--bus-color)' };
+  const labels = { shortest:'Shortest Route', coolest:'Coolest Route', accessible:'Accessible Route', bus:'Bus Route' };
   const color  = colors[routeMode];
 
-  const badge = document.getElementById('route-mode-badge');
-  badge.textContent    = labels[routeMode];
-  badge.style.background = color;
-
-  ['stat-distance', 'stat-shade', 'stat-time'].forEach(id => {
+  document.getElementById('route-mode-badge').textContent    = labels[routeMode];
+  document.getElementById('route-mode-badge').style.background = color;
+  ['stat-distance','stat-shade','stat-time'].forEach(id => {
     document.getElementById(id).style.color = color;
   });
 
   document.getElementById('stat-distance').textContent =
     totalDist >= 1000 ? `${(totalDist / 1000).toFixed(2)} km` : `${totalDist} m`;
   document.getElementById('stat-shade').textContent = `${avgShade}%`;
-  document.getElementById('stat-time').textContent  = `${walkMins} min`;
+  document.getElementById('stat-time').textContent  = `${totalMins} min`;
 
-  // Path stops
   document.getElementById('route-path-display').innerHTML = nodes.map((id, i) => {
-    const b      = getBuilding(id);
-    const isEnd  = (i === 0 || i === nodes.length - 1);
-    const dotClr = isEnd ? color : 'var(--border)';
-    const txtClr = isEnd ? 'var(--text)' : 'var(--text-muted)';
+    const b     = getBuilding(id);
+    const isEnd = (i === 0 || i === nodes.length - 1);
+    const edge  = edges[i];
+    const isBusSeg = edge && edge.type === 'bus';
+    const dotClr = isEnd ? color : (isBusSeg ? 'var(--bus-color)' : 'var(--border)');
+    const label  = isBusSeg ? ` <span style="color:var(--bus-color);font-size:9px">(bus)</span>` : '';
     return `
       <div class="route-stop">
         <div class="route-dot" style="background:${dotClr}"></div>
-        <span style="color:${txtClr}">${b.name}</span>
+        <span style="color:${isEnd ? 'var(--text)' : 'var(--text-muted)'}">${b.name}${label}</span>
       </div>
       ${i < nodes.length - 1 ? '<div class="route-line-seg"></div>' : ''}
     `;
   }).join('');
 
-  // Accessibility info bar
+  // Access info
   const accessDiv = document.getElementById('route-access-info');
   if (routeMode === 'accessible') {
-    accessDiv.innerHTML =
-      `<span class="access-icon" aria-hidden="true">&#9855;</span> ` +
-      `Fully wheelchair accessible &mdash; Avg density: ${avgDens}/3`;
+    accessDiv.innerHTML = '&#9855; Fully wheelchair accessible';
+    accessDiv.style.color = 'var(--purple)';
     accessDiv.classList.remove('hidden');
   } else if (!allAccess) {
-    accessDiv.innerHTML =
-      `<span class="access-icon" aria-hidden="true">&#9888;</span> ` +
-      `Route includes 1+ inaccessible segments`;
+    accessDiv.innerHTML = '&#9888; Route includes inaccessible segments';
     accessDiv.style.color = 'var(--yellow)';
     accessDiv.classList.remove('hidden');
   } else {
     accessDiv.classList.add('hidden');
   }
 
-  // Coolest comparison banner
+  // Coolest comparison
   const compDiv = document.getElementById('route-comparison');
   if (routeMode === 'coolest') {
-    const shortResult = dijkstra(buildGraph(false), nodes[0], nodes[nodes.length - 1], shortestWeight);
+    const shortResult = dijkstra(buildGraph('shortest'), nodes[0], nodes[nodes.length - 1], getWeightFn('shortest'));
     if (shortResult) {
       const shortDist  = shortResult.edges.reduce((s, e) => s + e.distance, 0);
       const shortShade = Math.round(shortResult.edges.reduce((s, e) => s + e.shadeScore, 0) / shortResult.edges.length);
-      const extra      = totalDist - shortDist;
+      const extra = totalDist - shortDist;
       compDiv.innerHTML = extra > 10
         ? `+${extra} m longer &mdash; <b>${avgShade}% shade</b> vs <b>${shortShade}%</b> on shortest`
-        : `Same distance as shortest &mdash; already the coolest path!`;
+        : `Same distance as shortest &mdash; already the coolest!`;
       compDiv.classList.remove('hidden');
     }
   } else {
     compDiv.classList.add('hidden');
   }
 
-  // Screen reader announcement
   announce(
-    `${labels[routeMode]} found: ${totalDist} metres, ${walkMins} minutes walk, ` +
-    `${avgShade}% average shade. ${nodes.length} stops: ` +
-    nodes.map(id => getBuilding(id).name).join(', ') + '.'
+    `${labels[routeMode]}: ${totalDist}m, ${totalMins} min, ${avgShade}% shade. ` +
+    nodes.map(id => getBuilding(id).name).join(', ')
   );
 }
 
@@ -371,32 +430,30 @@ function clearRoute() {
 
 // ─── Corridors Panel ──────────────────────────────────────────────────────────
 function populateCorridorsPanel() {
-  const sorted = [...PATHS].sort((a, b) => a.shadeScore - b.shadeScore).slice(0, 5);
+  const sorted = [...PATHS].filter(p => p.type === 'walk')
+    .sort((a, b) => a.shadeScore - b.shadeScore).slice(0, 5);
   document.getElementById('panel-body').innerHTML = sorted.map((path, i) => {
-    const fromB      = getBuilding(path.from);
-    const toB        = getBuilding(path.to);
+    const fromB = getBuilding(path.from), toB = getBuilding(path.to);
     const scoreClass = path.shadeScore < 40 ? 'score-exposed' : 'score-partial';
-    const densLabel  = ['', 'Light', 'Mod.', 'Heavy'][path.density];
+    const densLabel  = ['','Light','Mod.','Heavy'][path.density];
     return `
       <div class="corridor-item">
-        <div class="corridor-rank">#${i + 1}</div>
+        <div class="corridor-rank">#${i+1}</div>
         <div class="corridor-info">
           <div class="corridor-name">${path.name}</div>
           <div class="corridor-segment">${fromB.name} &rarr; ${toB.name}</div>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px">
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
           <div class="corridor-score ${scoreClass}">${path.shadeScore}</div>
           <div class="corridor-density">${densLabel}</div>
         </div>
-      </div>
-    `;
+      </div>`;
   }).join('');
 }
 
 function togglePanel() {
   panelOpen = !panelOpen;
   document.getElementById('panel-body').classList.toggle('collapsed', !panelOpen);
-  const icon = document.getElementById('panel-toggle-icon');
-  icon.classList.toggle('collapsed', !panelOpen);
+  document.getElementById('panel-toggle-icon').classList.toggle('collapsed', !panelOpen);
   document.querySelector('.panel-header').setAttribute('aria-expanded', panelOpen);
 }

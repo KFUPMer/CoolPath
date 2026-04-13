@@ -7,29 +7,25 @@
   <link rel="stylesheet" href="lib/leaflet.css"/>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Critical layout — inline so it always applies regardless of server */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body  { display: flex; flex-direction: column; height: 100vh; overflow: hidden;
             background: #0d1117; color: #e6edf3; font-family: sans-serif; }
     .topbar { height: 60px; display: flex; align-items: center; flex-shrink: 0;
               background: #161b22; border-bottom: 1px solid #30363d;
-              padding: 0 20px; gap: 14px; }
+              padding: 0 16px; gap: 10px; }
     #map    { flex: 1; min-height: 0; }
-    .route-card    { position: fixed !important; bottom: 76px; left: 20px; z-index: 1000;
+    .route-card    { position: fixed !important; bottom: 20px; left: 20px; z-index: 1000;
                      width: 300px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; }
     .corridors-panel { position: fixed !important; right: 20px; top: 72px; z-index: 1000;
                        width: 272px; background: #161b22; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; }
-    .legend        { position: fixed !important; bottom: 20px; left: 20px; z-index: 1000;
-                     background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 10px 14px; }
-    .layer-panel   { position: fixed !important; bottom: 20px; right: 20px; z-index: 1000;
-                     background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 10px 14px; }
+    .right-col  { position: fixed !important; right: 20px; bottom: 20px; z-index: 1000;
+                  display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
     .route-card.hidden, .route-comparison.hidden { display: none !important; }
     .panel-body.collapsed { max-height: 0 !important; overflow: hidden; }
   </style>
 </head>
 <body class="" aria-label="CoolPath KFUPM Campus Navigator">
 
-  <!-- Screen reader live region -->
   <div id="sr-announce" aria-live="polite" aria-atomic="true"
        style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"></div>
 
@@ -38,7 +34,7 @@
       <div class="brand-icon" aria-hidden="true"></div>
       <div class="brand-text">
         <span class="brand-name">CoolPath</span>
-        <span class="brand-sub">KFUPM Campus Navigator</span>
+        <span class="brand-sub">KFUPM Navigator</span>
       </div>
     </div>
 
@@ -56,16 +52,23 @@
       <div class="mode-toggle" role="group" aria-label="Route mode">
         <button id="btn-shortest"   class="mode-btn active" onclick="setMode('shortest')"   aria-pressed="true">Shortest</button>
         <button id="btn-coolest"    class="mode-btn"        onclick="setMode('coolest')"    aria-pressed="false">Coolest</button>
-        <button id="btn-accessible" class="mode-btn"        onclick="setMode('accessible')" aria-pressed="false" title="Wheelchair-accessible routes only">Accessible</button>
+        <button id="btn-accessible" class="mode-btn"        onclick="setMode('accessible')" aria-pressed="false">Accessible</button>
+        <button id="btn-bus"        class="mode-btn"        onclick="setMode('bus')"        aria-pressed="false">By Bus</button>
       </div>
 
-      <button id="btn-go" class="go-btn" onclick="findAndDrawRoute()" aria-label="Find route">Find Route</button>
+      <button id="btn-go" class="go-btn" onclick="findAndDrawRoute()">Find Route</button>
+    </div>
+
+    <div class="map-mode-toggle" role="group" aria-label="Map style">
+      <button class="map-mode-btn active" onclick="setMapMode('dark')"      id="mm-dark">Dark</button>
+      <button class="map-mode-btn"        onclick="setMapMode('light')"     id="mm-light">Light</button>
+      <button class="map-mode-btn"        onclick="setMapMode('satellite')" id="mm-satellite">Satellite</button>
     </div>
   </header>
 
   <div id="map" role="application" aria-label="KFUPM campus map"></div>
 
-  <!-- Route Info Card -->
+  <!-- Route Info Card (bottom-left, no longer overlaps legend) -->
   <div id="route-card" class="route-card hidden" role="region" aria-label="Route details">
     <div class="route-card-header">
       <div class="route-mode-badge" id="route-mode-badge">Shortest Route</div>
@@ -84,15 +87,15 @@
       <div class="stat-divider"></div>
       <div class="stat-item">
         <div class="stat-val" id="stat-time">&#8212;</div>
-        <div class="stat-lbl">Walk Time</div>
+        <div class="stat-lbl">Travel Time</div>
       </div>
     </div>
     <div class="route-path-display" id="route-path-display"></div>
-    <div id="route-comparison" class="route-comparison hidden"></div>
+    <div id="route-comparison"  class="route-comparison hidden"></div>
     <div id="route-access-info" class="route-access-info hidden"></div>
   </div>
 
-  <!-- Exposed Corridors Panel -->
+  <!-- Exposed Corridors Panel (top-right) -->
   <div id="corridors-panel" class="corridors-panel" role="complementary" aria-label="Most exposed corridors">
     <div class="panel-header" onclick="togglePanel()" role="button" tabindex="0" aria-expanded="true">
       <span class="panel-title">Top 5 Most Exposed Corridors</span>
@@ -102,30 +105,38 @@
     <div class="panel-footer">For facilities &amp; planning</div>
   </div>
 
-  <!-- Map Legend -->
-  <div class="legend" role="note" aria-label="Map legend">
-    <div class="legend-title">Shade Level</div>
-    <div class="legend-item"><span class="legend-dot shaded"  aria-hidden="true"></span> Shaded (70–100)</div>
-    <div class="legend-item"><span class="legend-dot partial" aria-hidden="true"></span> Partial (40–69)</div>
-    <div class="legend-item"><span class="legend-dot exposed" aria-hidden="true"></span> Exposed (0–39)</div>
-    <div class="legend-item legend-access"><span class="legend-dot inaccessible" aria-hidden="true"></span> Inaccessible</div>
-  </div>
+  <!-- Bottom-right column: legend + layers -->
+  <div class="right-col">
 
-  <!-- Layer Controls -->
-  <div class="layer-panel" role="group" aria-label="Map layer controls">
-    <div class="layer-panel-title">Layers</div>
-    <label class="layer-toggle">
-      <input type="checkbox" id="toggle-heatmap"  onchange="toggleHeatmap(this.checked)">
-      <span class="layer-label">Urban Heatmap</span>
-    </label>
-    <label class="layer-toggle">
-      <input type="checkbox" id="toggle-density"  onchange="toggleDensity(this.checked)">
-      <span class="layer-label">Crowd Density</span>
-    </label>
-    <label class="layer-toggle">
-      <input type="checkbox" id="toggle-contrast" onchange="toggleContrast(this.checked)">
-      <span class="layer-label">High Contrast</span>
-    </label>
+    <div class="layer-panel" role="group" aria-label="Map layer controls">
+      <div class="layer-panel-title">Layers</div>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-heatmap"  onchange="toggleHeatmap(this.checked)">
+        <span class="layer-label">Urban Heatmap</span>
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-density"  onchange="toggleDensity(this.checked)">
+        <span class="layer-label">Crowd Density</span>
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-buses"    onchange="toggleBusLayer(this.checked)" id="toggle-buses">
+        <span class="layer-label">Show Bus Routes</span>
+      </label>
+      <label class="layer-toggle">
+        <input type="checkbox" id="toggle-contrast" onchange="toggleContrast(this.checked)">
+        <span class="layer-label">High Contrast</span>
+      </label>
+    </div>
+
+    <div class="legend" role="note" aria-label="Map legend">
+      <div class="legend-title">Shade Level</div>
+      <div class="legend-item"><span class="legend-dot shaded"      aria-hidden="true"></span> Shaded (70–100)</div>
+      <div class="legend-item"><span class="legend-dot partial"     aria-hidden="true"></span> Partial (40–69)</div>
+      <div class="legend-item"><span class="legend-dot exposed"     aria-hidden="true"></span> Exposed (0–39)</div>
+      <div class="legend-item"><span class="legend-dot bus-dot"     aria-hidden="true"></span> Bus Route</div>
+      <div class="legend-item"><span class="legend-dot inaccessible" aria-hidden="true"></span> Inaccessible</div>
+    </div>
+
   </div>
 
   <script src="lib/leaflet.js"></script>
