@@ -284,6 +284,85 @@
     .sidebar::-webkit-scrollbar { width: 5px; }
     .sidebar::-webkit-scrollbar-track { background: transparent; }
     .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ── Mobile tab bar ── */
+    .mobile-tabs { display: none; }
+
+    @media (max-width: 768px) {
+
+      /* Topbar: compact */
+      .plan-topbar {
+        height: auto;
+        padding: 10px 14px;
+        gap: 8px;
+      }
+      .plan-title-block p   { display: none; }
+      .plan-title-block h1  { font-size: 14px; }
+      .back-btn             { padding: 5px 10px; font-size: 11px; }
+      .priority-badge       { font-size: 9px; padding: 3px 8px; white-space: nowrap; }
+
+      /* Body: stacked column, minus topbar (~52px) and tabs (50px) */
+      .plan-body {
+        grid-template-columns: 1fr;
+        height: calc(100dvh - 52px - 50px);
+        height: calc(100vh  - 52px - 50px);
+      }
+
+      /* Tab bar at bottom */
+      .mobile-tabs {
+        display: flex;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        height: 50px;
+        flex-shrink: 0;
+        order: 999;
+      }
+      .tab-btn {
+        flex: 1;
+        background: none;
+        border: none;
+        border-top: 2px solid transparent;
+        color: var(--text-muted);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: color 0.15s, border-color 0.15s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .tab-btn.active {
+        color: var(--green);
+        border-top-color: var(--green);
+        background: rgba(0,184,148,0.05);
+      }
+
+      /* Sidebar fills full area when Data tab active */
+      .sidebar {
+        border-right: none;
+        grid-column: 1;
+        -webkit-overflow-scrolling: touch;
+      }
+      .sidebar.tab-hidden   { display: none; }
+
+      /* Map panel */
+      .map-panel            { grid-column: 1; }
+      .map-panel.tab-hidden { display: none; }
+
+      /* Legend: compact */
+      .map-legend {
+        bottom: 10px; right: 10px;
+        padding: 8px 12px; font-size: 10px;
+      }
+      .map-legend-title { margin-bottom: 4px; font-size: 8px; }
+      .ml-item { margin-bottom: 2px; }
+      .ml-swatch { width: 20px; }
+
+      /* Detail section: auto-scroll into view on mobile */
+      #detail-section { scroll-margin-top: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -361,7 +440,7 @@
     </aside>
 
     <!-- ── Map ── -->
-    <div style="position:relative;width:100%;height:100%;">
+    <div class="map-panel tab-hidden" style="position:relative;width:100%;height:100%;">
       <div id="plan-map"></div>
 
       <div class="map-legend">
@@ -373,6 +452,16 @@
       </div>
     </div>
   </div>
+
+  <!-- Mobile tab bar -->
+  <nav class="mobile-tabs" role="tablist">
+    <button class="tab-btn active" id="tab-data" onclick="switchTab('data')" role="tab" aria-selected="true">
+      &#128202; Data
+    </button>
+    <button class="tab-btn" id="tab-map" onclick="switchTab('map')" role="tab" aria-selected="false">
+      &#128205; Map
+    </button>
+  </nav>
 
   <script src="lib/leaflet.js"></script>
   <script src="data/paths.js"></script>
@@ -502,6 +591,9 @@
           ${rec.detail}
         </div>`;
 
+      // On mobile: switch to map tab so user sees the highlight
+      if (isMobile()) switchTab('map');
+
       // Highlight on map
       planMapLayers.forEach(({ layer, path: p, baseColor }) => {
         const isSelected = p.id === path.id;
@@ -516,6 +608,42 @@
         }
       });
     }
+
+    // ── Tab switching (mobile) ───────────────────────────────────────────────
+    function isMobile() { return window.innerWidth <= 768; }
+
+    function switchTab(tab) {
+      const sidebar   = document.querySelector('.sidebar');
+      const mapPanel  = document.querySelector('.map-panel');
+      const btnData   = document.getElementById('tab-data');
+      const btnMap    = document.getElementById('tab-map');
+
+      if (tab === 'data') {
+        sidebar.classList.remove('tab-hidden');
+        mapPanel.classList.add('tab-hidden');
+        btnData.classList.add('active');    btnData.setAttribute('aria-selected', 'true');
+        btnMap.classList.remove('active');  btnMap.setAttribute('aria-selected', 'false');
+      } else {
+        mapPanel.classList.remove('tab-hidden');
+        sidebar.classList.add('tab-hidden');
+        btnMap.classList.add('active');    btnMap.setAttribute('aria-selected', 'true');
+        btnData.classList.remove('active'); btnData.setAttribute('aria-selected', 'false');
+        setTimeout(() => planMap.invalidateSize(), 50);
+      }
+    }
+
+    function initTabs() {
+      if (!isMobile()) {
+        document.querySelector('.sidebar').classList.remove('tab-hidden');
+        document.querySelector('.map-panel').classList.remove('tab-hidden');
+      } else {
+        // Default: show data tab on mobile
+        document.querySelector('.sidebar').classList.remove('tab-hidden');
+        document.querySelector('.map-panel').classList.add('tab-hidden');
+      }
+    }
+    initTabs();
+    window.addEventListener('resize', initTabs);
 
     renderPriorityList();
 
