@@ -505,6 +505,50 @@ body {
 }
 .leaflet-tooltip::before { display: none !important; }
 
+/* ── Building name labels (permanent tooltips) ── */
+.building-label {
+  background: rgba(13, 17, 23, 0.82) !important;
+  border: 1px solid #30363d !important;
+  color: #e6edf3 !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45) !important;
+  pointer-events: none !important;
+}
+.building-label::before { display: none !important; }
+
+/* ── Landmark labels ── */
+.landmark-label {
+  background: rgba(26, 38, 52, 0.88) !important;
+  border: 1px solid #f0a500 !important;
+  color: #f0a500 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  white-space: nowrap !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45) !important;
+  pointer-events: none !important;
+}
+.landmark-label::before { display: none !important; }
+
+/* ── Landmark pin icon ── */
+.landmark-pin {
+  width: 28px;
+  height: 28px;
+  background: rgba(240, 165, 0, 0.15);
+  border: 1.5px solid #f0a500;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+}
+
 /* ═══════════════════════════════════════════
    MOBILE RESPONSIVE  (≤ 768px)
    ═══════════════════════════════════════════ */

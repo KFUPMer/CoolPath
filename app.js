@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   populateDropdowns();
   drawWalkPaths();
   drawBusRoutes();
+  drawLandmarkMarkers();
   drawBuildingMarkers();
   populateCorridorsPanel();
 });
@@ -122,8 +123,35 @@ function drawBuildingMarkers() {
       radius: 6, fillColor: '#58a6ff',
       color: '#0d1117', weight: 2, fillOpacity: 0.95,
     }).addTo(map);
-    marker.bindTooltip(b.name, { direction: 'top' });
+
+    // Permanent label — always visible so users can orient while walking
+    marker.bindTooltip(b.name, {
+      permanent: true,
+      direction: 'top',
+      offset: [0, -8],
+      className: 'building-label',
+    }).addTo(map);
+
     buildingMarkers.push({ id: b.id, marker });
+  });
+}
+
+// ─── Landmark Markers ─────────────────────────────────────────────────────────
+function drawLandmarkMarkers() {
+  LANDMARKS.forEach(lm => {
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="landmark-pin">${lm.icon}</div>`,
+      iconSize: [28, 28],
+      iconAnchor: [14, 14],
+    });
+    const marker = L.marker(lm.coords, { icon, zIndexOffset: -10 }).addTo(map);
+    marker.bindTooltip(lm.name, {
+      permanent: true,
+      direction: 'top',
+      offset: [0, -16],
+      className: 'landmark-label',
+    }).addTo(map);
   });
 }
 

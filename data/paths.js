@@ -23,6 +23,18 @@ function getBuilding(id) {
   return BUILDINGS.find(b => b.id === id);
 }
 
+// Notable campus landmarks — shown as named markers for orientation while walking
+const LANDMARKS = [
+  { id: 'lm_tower',       name: 'Water Tower (البرج)',          coords: [26.3090, 50.1470], icon: '🗼' },
+  { id: 'lm_main_plaza',  name: 'Main Plaza',                   coords: [26.3065, 50.1472], icon: '⬡' },
+  { id: 'lm_north_gate',  name: 'North Gate',                   coords: [26.3180, 50.1475], icon: '🔲' },
+  { id: 'lm_east_gate',   name: 'East Gate',                    coords: [26.3090, 50.1560], icon: '🔲' },
+  { id: 'lm_football',    name: 'Football Field',               coords: [26.3070, 50.1435], icon: '⚽' },
+  { id: 'lm_swimming',    name: 'Swimming Pool',                coords: [26.3040, 50.1442], icon: '🏊' },
+  { id: 'lm_parking_s',   name: 'South Parking',               coords: [26.3020, 50.1500], icon: '🅿' },
+  { id: 'lm_quad',        name: 'Engineering Quad',             coords: [26.3080, 50.1462], icon: '⬡' },
+];
+
 
 // shadeScore: 0 = fully exposed, 100 = fully shaded
 // accessible: wheelchair-friendly
