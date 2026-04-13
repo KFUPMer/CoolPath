@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoolPath — KFUPM Campus Navigator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Critical layout — inline so it always applies */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body  { display: flex; flex-direction: column; height: 100vh; overflow: hidden;
+            background: #0d1117; color: #e6edf3; font-family: sans-serif; }
+    .topbar { height: 60px; display: flex; align-items: center; flex-shrink: 0;
+              background: #161b22; border-bottom: 1px solid #30363d;
+              padding: 0 20px; gap: 14px; overflow: hidden; }
+    #map    { flex: 1; min-height: 0; }
+    .route-card    { position: fixed !important; bottom: 76px; left: 20px;
+                     z-index: 1000; width: 290px; background: #161b22;
+                     border: 1px solid #30363d; border-radius: 12px; }
+    .corridors-panel { position: fixed !important; right: 20px; top: 72px;
+                       z-index: 1000; width: 272px; background: #161b22;
+                       border: 1px solid #30363d; border-radius: 12px; overflow: hidden; }
+    .legend { position: fixed !important; bottom: 20px; left: 20px; z-index: 1000;
+              background: #161b22; border: 1px solid #30363d; border-radius: 10px;
+              padding: 10px 14px; }
+    .route-card.hidden, .route-comparison.hidden { display: none !important; }
+    .panel-body.collapsed { max-height: 0 !important; overflow: hidden; }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon"></div>
+      <div class="brand-text">
+        <span class="brand-name">CoolPath</span>
+        <span class="brand-sub">KFUPM Campus Navigator</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="select-group">
+        <label for="origin">From</label>
+        <select id="origin"></select>
+      </div>
+      <div class="controls-arrow">&#8594;</div>
+      <div class="select-group">
+        <label for="destination">To</label>
+        <select id="destination"></select>
+      </div>
+
+      <div class="mode-toggle">
+        <button id="btn-shortest" class="mode-btn active" onclick="setMode('shortest')">
+          Shortest
+        </button>
+        <button id="btn-coolest" class="mode-btn" onclick="setMode('coolest')">
+          Coolest
+        </button>
+      </div>
+
+      <button id="btn-go" class="go-btn" onclick="findAndDrawRoute()">Find Route</button>
+    </div>
+  </header>
+
+  <div id="map"></div>
+
+  <!-- Route Info Card -->
+  <div id="route-card" class="route-card hidden">
+    <div class="route-card-header">
+      <div class="route-mode-badge" id="route-mode-badge">Shortest Route</div>
+      <button class="close-btn" onclick="clearRoute()">&#10005;</button>
+    </div>
+    <div class="route-stats">
+      <div class="stat-item">
+        <div class="stat-val" id="stat-distance">&#8212;</div>
+        <div class="stat-lbl">Distance</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-val" id="stat-shade">&#8212;</div>
+        <div class="stat-lbl">Avg Shade</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-val" id="stat-time">&#8212;</div>
+        <div class="stat-lbl">Walk Time</div>
+      </div>
+    </div>
+    <div class="route-path-display" id="route-path-display"></div>
+    <div id="route-comparison" class="route-comparison hidden"></div>
+  </div>
+
+  <!-- Exposed Corridors Panel -->
+  <div id="corridors-panel" class="corridors-panel">
+    <div class="panel-header" onclick="togglePanel()">
+      <span class="panel-title">Top 5 Most Exposed Corridors</span>
+      <span class="panel-toggle-icon" id="panel-toggle-icon">&#9650;</span>
+    </div>
+    <div id="panel-body" class="panel-body">
+      <!-- Populated by JS -->
+    </div>
+    <div class="panel-footer">For facilities &amp; planning</div>
+  </div>
+
+  <!-- Map Legend -->
+  <div class="legend">
+    <div class="legend-title">Shade Level</div>
+    <div class="legend-item"><span class="legend-dot shaded"></span> Shaded (70–100)</div>
+    <div class="legend-item"><span class="legend-dot partial"></span> Partial (40–69)</div>
+    <div class="legend-item"><span class="legend-dot exposed"></span> Exposed (0–39)</div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/OPnA=" crossorigin=""></script>
+  <script src="data/paths.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
