@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>CoolPath — KFUPM Campus Navigator</title>
   <link rel="stylesheet" href="lib/leaflet.css"/>
   <link rel="stylesheet" href="style.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body  { display: flex; flex-direction: column; height: 100vh; overflow: hidden;
-            background: #0d1117; color: #e6edf3; font-family: sans-serif; }
+    body  { display: flex; flex-direction: column;
+            height: 100vh; height: 100dvh;
+            overflow: hidden;
+            background: #0d1117; color: #e6edf3; font-family: sans-serif;
+            /* iOS Safari: prevent elastic bounce revealing bg */
+            position: fixed; width: 100%; }
     .topbar { height: 60px; display: flex; align-items: center; flex-shrink: 0;
               background: #161b22; border-bottom: 1px solid #30363d;
               padding: 0 16px; gap: 10px; }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>CoolPath — Shade Infrastructure Plan</title>
   <link rel="stylesheet" href="lib/leaflet.css"/>
   <link rel="stylesheet" href="style.css">
@@ -14,9 +14,13 @@
       background: var(--bg);
       color: var(--text);
       height: 100vh;
+      height: 100dvh;
+      height: -webkit-fill-available;
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      position: fixed;
+      width: 100%;
     }
 
     /* ── Top bar ───────────── */

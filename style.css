@@ -607,3 +607,54 @@ body {
   /* ── Map mode buttons: smaller ── */
   .map-mode-btn { padding: 4px 8px; font-size: 9px; }
 }
+
+/* ═══════════════════════════════════════════
+   SAFARI / iOS FIXES
+   ═══════════════════════════════════════════ */
+
+/* Use dvh (dynamic viewport height) so Safari's
+   collapsing address bar doesn't cut off content */
+body {
+  height: 100vh;
+  height: 100dvh;
+  /* Fallback for older Safari that doesn't support dvh */
+  height: -webkit-fill-available;
+}
+
+/* Safe area insets — keeps fixed elements above
+   Safari's home indicator and bottom toolbar */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+
+  /* Route card: lift above home bar */
+  .route-card {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Mobile layers button: sit above home bar */
+  #mobile-panel-btn {
+    bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+
+  /* Mobile panel sheet: padding for home bar */
+  .right-col.mobile-open {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom)) !important;
+  }
+
+  /* Topbar: account for notch on landscape */
+  .topbar {
+    padding-left:  calc(12px + env(safe-area-inset-left));
+    padding-right: calc(12px + env(safe-area-inset-right));
+  }
+}
+
+/* Fix Leaflet map height on iOS Safari —
+   100% of parent flex container, not the full window */
+#map {
+  -webkit-overflow-scrolling: touch;
+  /* Force GPU layer for smoother tile rendering on iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Safari doesn't always respect flex min-height: 0 */
+#map { min-height: 0; flex: 1 1 0%; }
