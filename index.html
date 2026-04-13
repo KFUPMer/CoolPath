@@ -53,7 +53,6 @@
         <button id="btn-shortest"   class="mode-btn active" onclick="setMode('shortest')"   aria-pressed="true">Shortest</button>
         <button id="btn-coolest"    class="mode-btn"        onclick="setMode('coolest')"    aria-pressed="false">Coolest</button>
         <button id="btn-accessible" class="mode-btn"        onclick="setMode('accessible')" aria-pressed="false">Accessible</button>
-        <button id="btn-bus"        class="mode-btn"        onclick="setMode('bus')"        aria-pressed="false">By Bus</button>
       </div>
 
       <button id="btn-go" class="go-btn" onclick="findAndDrawRoute()">Find Route</button>
@@ -122,11 +121,7 @@
         <input type="checkbox" id="toggle-density"  onchange="toggleDensity(this.checked)">
         <span class="layer-label">Crowd Density</span>
       </label>
-      <label class="layer-toggle">
-        <input type="checkbox" id="toggle-buses"    onchange="toggleBusLayer(this.checked)" id="toggle-buses">
-        <span class="layer-label">Show Bus Routes</span>
-      </label>
-      <label class="layer-toggle">
+<label class="layer-toggle">
         <input type="checkbox" id="toggle-contrast" onchange="toggleContrast(this.checked)">
         <span class="layer-label">High Contrast</span>
       </label>
@@ -137,8 +132,7 @@
       <div class="legend-item"><span class="legend-dot shaded"      aria-hidden="true"></span> Shaded (70–100)</div>
       <div class="legend-item"><span class="legend-dot partial"     aria-hidden="true"></span> Partial (40–69)</div>
       <div class="legend-item"><span class="legend-dot exposed"     aria-hidden="true"></span> Exposed (0–39)</div>
-      <div class="legend-item"><span class="legend-dot bus-dot"     aria-hidden="true"></span> Bus Route</div>
-      <div class="legend-item"><span class="legend-dot inaccessible" aria-hidden="true"></span> Inaccessible</div>
+<div class="legend-item"><span class="legend-dot inaccessible" aria-hidden="true"></span> Inaccessible</div>
     </div>
 
   </div>

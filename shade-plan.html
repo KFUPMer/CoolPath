@@ -13,7 +13,8 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
@@ -67,8 +68,7 @@
     .plan-body {
       display: grid;
       grid-template-columns: 380px 1fr;
-      flex: 1;
-      min-height: 0;
+      height: calc(100vh - 60px);
       overflow: hidden;
     }
 
@@ -250,7 +250,7 @@
     }
 
     /* ── Map panel ──────────── */
-    #plan-map { flex: 1; background: var(--bg); }
+    #plan-map { width: 100%; height: 100%; background: var(--bg); }
 
     /* ── Legend overlay ─────── */
     .map-legend {
@@ -357,7 +357,7 @@
     </aside>
 
     <!-- ── Map ── -->
-    <div style="position:relative;flex:1;min-width:0;">
+    <div style="position:relative;width:100%;height:100%;">
       <div id="plan-map"></div>
 
       <div class="map-legend">

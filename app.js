@@ -255,7 +255,7 @@ function getWeightFn(mode) {
 // ─── UI Actions ───────────────────────────────────────────────────────────────
 function setMode(mode) {
   routeMode = mode;
-  ['shortest', 'coolest', 'accessible', 'bus'].forEach(m => {
+  ['shortest', 'coolest', 'accessible'].forEach(m => {
     const btn = document.getElementById('btn-' + m);
     btn.classList.toggle('active', m === mode);
     btn.setAttribute('aria-pressed', m === mode ? 'true' : 'false');
