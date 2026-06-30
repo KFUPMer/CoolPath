@@ -1,0 +1,6414 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-04-13T08:50:11Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 550001511,
+  "center": {
+    "lat": 26.3072441,
+    "lon": 50.1543540
+  },
+  "tags": {
+    "addr:housenumber": "54",
+    "alt_name": "مبنى 54",
+    "building": "yes",
+    "name": "Building 54",
+    "name:ar": "مبنى 54"
+  }
+},
+{
+  "type": "way",
+  "id": 550001512,
+  "center": {
+    "lat": 26.3055578,
+    "lon": 50.1478519
+  },
+  "tags": {
+    "addr:housenumber": "76",
+    "building": "college",
+    "name": "Building 76 Petrolum Engineering & Geosciences Department",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 550001513,
+  "center": {
+    "lat": 26.3057161,
+    "lon": 50.1464527
+  },
+  "tags": {
+    "addr:housenumber": "22",
+    "building": "college",
+    "name": "Building 22 Computer Science Department",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 550001514,
+  "center": {
+    "lat": 26.3047839,
+    "lon": 50.1467006
+  },
+  "tags": {
+    "addr:city": "Dhahran",
+    "addr:housenumber": "24",
+    "addr:street": "Academic Belt Road",
+    "building": "college",
+    "name": "Building 24 Business School",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 566357564,
+  "center": {
+    "lat": 26.3095472,
+    "lon": 50.1628160
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "concrete",
+    "man_made": "storage_tank",
+    "natural": "water",
+    "product": "sewage",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357569,
+  "center": {
+    "lat": 26.3097586,
+    "lon": 50.1625188
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "concrete",
+    "man_made": "storage_tank",
+    "natural": "water",
+    "product": "sewage",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357578,
+  "center": {
+    "lat": 26.3098067,
+    "lon": 50.1630337
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "concrete",
+    "man_made": "storage_tank",
+    "natural": "water",
+    "product": "sewage",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357583,
+  "center": {
+    "lat": 26.3100112,
+    "lon": 50.1627280
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "concrete",
+    "man_made": "storage_tank",
+    "natural": "water",
+    "product": "sewage",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357585,
+  "center": {
+    "lat": 26.3102302,
+    "lon": 50.1629018
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "concrete",
+    "man_made": "storage_tank",
+    "natural": "water",
+    "product": "sewage",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357590,
+  "center": {
+    "lat": 26.3104532,
+    "lon": 50.1630917
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "steel",
+    "covered": "yes",
+    "man_made": "storage_tank",
+    "source": "DigitalGlobal Premium Image 02-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357595,
+  "center": {
+    "lat": 26.3156352,
+    "lon": 50.1522274
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "steel",
+    "covered": "yes",
+    "man_made": "storage_tank",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "product": "fuel",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357596,
+  "center": {
+    "lat": 26.3159834,
+    "lon": 50.1525852
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "steel",
+    "covered": "yes",
+    "man_made": "storage_tank",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "product": "fuel",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357597,
+  "center": {
+    "lat": 26.3158007,
+    "lon": 50.1524062
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "steel",
+    "covered": "yes",
+    "man_made": "storage_tank",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "product": "fuel",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357598,
+  "center": {
+    "lat": 26.3154184,
+    "lon": 50.1527260
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "steel",
+    "covered": "yes",
+    "man_made": "storage_tank",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "product": "fuel",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357599,
+  "center": {
+    "lat": 26.3152212,
+    "lon": 50.1528601
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "steel",
+    "covered": "yes",
+    "man_made": "storage_tank",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "product": "fuel",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 566357600,
+  "center": {
+    "lat": 26.3154069,
+    "lon": 50.1529752
+  },
+  "tags": {
+    "building": "industrial",
+    "building:material": "steel",
+    "covered": "yes",
+    "man_made": "storage_tank",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "product": "fuel",
+    "source": "DigitalGlobal Premium Image 04-03-18"
+  }
+},
+{
+  "type": "way",
+  "id": 632657580,
+  "center": {
+    "lat": 26.3120530,
+    "lon": 50.1481328
+  },
+  "tags": {
+    "addr:housenumber": "73",
+    "alt_name": "مبنى 73",
+    "amenity": "parking",
+    "building": "parking",
+    "name": "Building 73",
+    "name:ar": "مبنى 73",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "parking": "multi-storey"
+  }
+},
+{
+  "type": "way",
+  "id": 632657677,
+  "center": {
+    "lat": 26.3129835,
+    "lon": 50.1452161
+  },
+  "tags": {
+    "addr:housenumber": "74",
+    "amenity": "parking",
+    "building": "yes",
+    "name": "Building 74 Parking",
+    "name:ar": "مبنى 74 المواقف",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "parking": "multi-storey"
+  }
+},
+{
+  "type": "way",
+  "id": 638821081,
+  "center": {
+    "lat": 26.3081710,
+    "lon": 50.1450461
+  },
+  "tags": {
+    "addr:housenumber": "59",
+    "building": "college",
+    "layer": "1",
+    "name": "Building 59 Electrical Engineering Dept",
+    "name:ar": "مبنى 59 الهندسة الكهربائية",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 638821082,
+  "center": {
+    "lat": 26.3051833,
+    "lon": 50.1455009
+  },
+  "tags": {
+    "addr:housenumber": "11",
+    "building": "yes",
+    "leisure": "sports_hall",
+    "name": "Building 11 Physical Education Department",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 700440799,
+  "center": {
+    "lat": 26.2982299,
+    "lon": 50.1584525
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700440800,
+  "center": {
+    "lat": 26.2993763,
+    "lon": 50.1597495
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700440804,
+  "center": {
+    "lat": 26.2978473,
+    "lon": 50.1607525
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700440805,
+  "center": {
+    "lat": 26.2988574,
+    "lon": 50.1611152
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700537238,
+  "center": {
+    "lat": 26.2982003,
+    "lon": 50.1506440
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700537239,
+  "center": {
+    "lat": 26.2983428,
+    "lon": 50.1549335
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700537240,
+  "center": {
+    "lat": 26.2981095,
+    "lon": 50.1548758
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700540725,
+  "center": {
+    "lat": 26.2985201,
+    "lon": 50.1506178
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700540726,
+  "center": {
+    "lat": 26.2988208,
+    "lon": 50.1508003
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700541223,
+  "center": {
+    "lat": 26.2984925,
+    "lon": 50.1509286
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 700962217,
+  "center": {
+    "lat": 26.3104154,
+    "lon": 50.1458849
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 700962218,
+  "center": {
+    "lat": 26.3100979,
+    "lon": 50.1461375
+  },
+  "tags": {
+    "building": "college",
+    "name": "Building 39",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 700963217,
+  "center": {
+    "lat": 26.3054247,
+    "lon": 50.1498906
+  },
+  "tags": {
+    "addr:housenumber": "27",
+    "building": "hospital",
+    "name": "Building 27 Medical center"
+  }
+},
+{
+  "type": "way",
+  "id": 700963229,
+  "center": {
+    "lat": 26.3092703,
+    "lon": 50.1456939
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701312379,
+  "center": {
+    "lat": 26.3135606,
+    "lon": 50.1516579
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701312380,
+  "center": {
+    "lat": 26.3133139,
+    "lon": 50.1523873
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701312381,
+  "center": {
+    "lat": 26.3140566,
+    "lon": 50.1511656
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701452896,
+  "center": {
+    "lat": 26.3135373,
+    "lon": 50.1468725
+  },
+  "tags": {
+    "addr:housenumber": "839",
+    "alt_name": "مبنى 839",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 839",
+    "name:en": "Building 839",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701452897,
+  "center": {
+    "lat": 26.3152823,
+    "lon": 50.1472644
+  },
+  "tags": {
+    "addr:housenumber": "841",
+    "alt_name": "مبنى 841",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 841",
+    "name:en": "Building 841",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701452898,
+  "center": {
+    "lat": 26.3159325,
+    "lon": 50.1469776
+  },
+  "tags": {
+    "addr:housenumber": "854",
+    "alt_name": "مبنى 854",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 854",
+    "name:en": "Building 854",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701452899,
+  "center": {
+    "lat": 26.3155527,
+    "lon": 50.1457346
+  },
+  "tags": {
+    "addr:housenumber": "852",
+    "alt_name": "مبنى 852",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 852",
+    "name:en": "Building 852",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701453269,
+  "center": {
+    "lat": 26.3158989,
+    "lon": 50.1464017
+  },
+  "tags": {
+    "addr:housenumber": "853",
+    "alt_name": "مبنى 853",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 853",
+    "name:en": "Building 853",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701453270,
+  "center": {
+    "lat": 26.3155208,
+    "lon": 50.1451723
+  },
+  "tags": {
+    "addr:housenumber": "851",
+    "alt_name": "مبنى 851",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 851",
+    "name:en": "Building 851",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701456003,
+  "center": {
+    "lat": 26.3139639,
+    "lon": 50.1449918
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701456004,
+  "center": {
+    "lat": 26.3155170,
+    "lon": 50.1460857
+  },
+  "tags": {
+    "building": "university",
+    "building:levels": "2",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "roof:levels": "0"
+  }
+},
+{
+  "type": "way",
+  "id": 701456006,
+  "center": {
+    "lat": 26.3137655,
+    "lon": 50.1462492
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 701456008,
+  "center": {
+    "lat": 26.3130345,
+    "lon": 50.1468537
+  },
+  "tags": {
+    "building": "public",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701456013,
+  "center": {
+    "lat": 26.3148585,
+    "lon": 50.1454004
+  },
+  "tags": {
+    "addr:housenumber": "843",
+    "alt_name": "مبنى 843",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 843",
+    "name:en": "Building 843",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "roof:levels": "1",
+    "roof:shape": "flat"
+  }
+},
+{
+  "type": "way",
+  "id": 701456014,
+  "center": {
+    "lat": 26.3149407,
+    "lon": 50.1461855
+  },
+  "tags": {
+    "addr:housenumber": "842",
+    "alt_name": "مبنى 842",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 842",
+    "name:en": "Building 842",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "roof:levels": "1",
+    "roof:shape": "flat"
+  }
+},
+{
+  "type": "way",
+  "id": 701456015,
+  "center": {
+    "lat": 26.3142623,
+    "lon": 50.1466418
+  },
+  "tags": {
+    "addr:housenumber": "840",
+    "alt_name": "مبنى 840",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 840",
+    "name:en": "Building 840",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "roof:levels": "0"
+  }
+},
+{
+  "type": "way",
+  "id": 701456016,
+  "center": {
+    "lat": 26.3132487,
+    "lon": 50.1459017
+  },
+  "tags": {
+    "addr:housenumber": "836",
+    "alt_name": "مبنى 836",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 836",
+    "name:en": "Building 836",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701456017,
+  "center": {
+    "lat": 26.3132840,
+    "lon": 50.1473010
+  },
+  "tags": {
+    "addr:housenumber": "838",
+    "alt_name": "مبنى 838",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 838",
+    "name:en": "Building 838",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701456018,
+  "center": {
+    "lat": 26.3131281,
+    "lon": 50.1463471
+  },
+  "tags": {
+    "addr:housenumber": "837",
+    "alt_name": "مبنى 837",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 837",
+    "name:en": "Building 837",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701456019,
+  "center": {
+    "lat": 26.3141442,
+    "lon": 50.1458872
+  },
+  "tags": {
+    "addr:housenumber": "835",
+    "alt_name": "مبنى 835",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 835",
+    "name:en": "Building 835",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701456020,
+  "center": {
+    "lat": 26.3146715,
+    "lon": 50.1447302
+  },
+  "tags": {
+    "addr:housenumber": "844",
+    "alt_name": "مبنى 844",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 844",
+    "name:en": "Building 844",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701459901,
+  "center": {
+    "lat": 26.3135203,
+    "lon": 50.1488394
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "religion": "muslim"
+  }
+},
+{
+  "type": "way",
+  "id": 701459902,
+  "center": {
+    "lat": 26.3136767,
+    "lon": 50.1493555
+  },
+  "tags": {
+    "addr:housenumber": "70",
+    "building": "university",
+    "name": "مبنى 70",
+    "name:en": "Building 70",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701459910,
+  "center": {
+    "lat": 26.3161883,
+    "lon": 50.1476168
+  },
+  "tags": {
+    "access": "yes",
+    "addr:housenumber": "72",
+    "alt_name": "مبنى 72",
+    "amenity": "parking",
+    "building": "yes",
+    "name": "Building 72",
+    "name:ar": "مبنى 72",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "parking": "multi-storey"
+  }
+},
+{
+  "type": "way",
+  "id": 701460319,
+  "center": {
+    "lat": 26.3120919,
+    "lon": 50.1503156
+  },
+  "tags": {
+    "addr:housenumber": "703",
+    "alt_name": "مبنى 703",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 703",
+    "name:en": "Building 703",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460320,
+  "center": {
+    "lat": 26.3126459,
+    "lon": 50.1507715
+  },
+  "tags": {
+    "addr:housenumber": "702",
+    "alt_name": "مبنى 702",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 702",
+    "name:en": "Building 702",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460321,
+  "center": {
+    "lat": 26.3123658,
+    "lon": 50.1498484
+  },
+  "tags": {
+    "addr:housenumber": "704",
+    "alt_name": "مبنى 704",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 704",
+    "name:en": "Building 704",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460322,
+  "center": {
+    "lat": 26.3140653,
+    "lon": 50.1526931
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460323,
+  "center": {
+    "lat": 26.3144264,
+    "lon": 50.1518741
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460324,
+  "center": {
+    "lat": 26.3147163,
+    "lon": 50.1514612
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460325,
+  "center": {
+    "lat": 26.3148355,
+    "lon": 50.1518645
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460326,
+  "center": {
+    "lat": 26.3147801,
+    "lon": 50.1521209
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701460327,
+  "center": {
+    "lat": 26.3145820,
+    "lon": 50.1518979
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701463090,
+  "center": {
+    "lat": 26.3110478,
+    "lon": 50.1477472
+  },
+  "tags": {
+    "addr:housenumber": "855",
+    "alt_name": "مبنى 855",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 855",
+    "name:en": "Building 855",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "smoking": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 701463091,
+  "center": {
+    "lat": 26.3108091,
+    "lon": 50.1477480
+  },
+  "tags": {
+    "addr:housenumber": "856",
+    "alt_name": "مبنى 856",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 856",
+    "name:en": "Building 856",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701463104,
+  "center": {
+    "lat": 26.3158201,
+    "lon": 50.1509540
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701463105,
+  "center": {
+    "lat": 26.3153747,
+    "lon": 50.1490554
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701463106,
+  "center": {
+    "lat": 26.3156222,
+    "lon": 50.1489725
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701717622,
+  "center": {
+    "lat": 26.3095676,
+    "lon": 50.1545708
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701717625,
+  "center": {
+    "lat": 26.3096023,
+    "lon": 50.1535490
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718947,
+  "center": {
+    "lat": 26.3111636,
+    "lon": 50.1552043
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718948,
+  "center": {
+    "lat": 26.3113759,
+    "lon": 50.1548526
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718949,
+  "center": {
+    "lat": 26.3104904,
+    "lon": 50.1525943
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 701718950,
+  "center": {
+    "lat": 26.3107495,
+    "lon": 50.1533824
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718951,
+  "center": {
+    "lat": 26.3094201,
+    "lon": 50.1528725
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718952,
+  "center": {
+    "lat": 26.3090890,
+    "lon": 50.1533201
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718953,
+  "center": {
+    "lat": 26.3092003,
+    "lon": 50.1531690
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718954,
+  "center": {
+    "lat": 26.3093116,
+    "lon": 50.1530198
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718955,
+  "center": {
+    "lat": 26.3055375,
+    "lon": 50.1531407
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718956,
+  "center": {
+    "lat": 26.3052366,
+    "lon": 50.1546252
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718957,
+  "center": {
+    "lat": 26.3069639,
+    "lon": 50.1548722
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718958,
+  "center": {
+    "lat": 26.3075037,
+    "lon": 50.1550573
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718960,
+  "center": {
+    "lat": 26.3091443,
+    "lon": 50.1553506
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718961,
+  "center": {
+    "lat": 26.3090330,
+    "lon": 50.1552067
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718962,
+  "center": {
+    "lat": 26.3088725,
+    "lon": 50.1551092
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718963,
+  "center": {
+    "lat": 26.3087607,
+    "lon": 50.1549649
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 701718964,
+  "center": {
+    "lat": 26.3086123,
+    "lon": 50.1556379
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 709053170,
+  "center": {
+    "lat": 26.3027621,
+    "lon": 50.1525720
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053171,
+  "center": {
+    "lat": 26.3030546,
+    "lon": 50.1545480
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053172,
+  "center": {
+    "lat": 26.3031987,
+    "lon": 50.1539667
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053173,
+  "center": {
+    "lat": 26.3030947,
+    "lon": 50.1532922
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053174,
+  "center": {
+    "lat": 26.3023586,
+    "lon": 50.1535147
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053175,
+  "center": {
+    "lat": 26.3018115,
+    "lon": 50.1536298
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053176,
+  "center": {
+    "lat": 26.2996714,
+    "lon": 50.1498195
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053177,
+  "center": {
+    "lat": 26.2996978,
+    "lon": 50.1508928
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053178,
+  "center": {
+    "lat": 26.3009996,
+    "lon": 50.1502969
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709053179,
+  "center": {
+    "lat": 26.3013967,
+    "lon": 50.1523686
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709054547,
+  "center": {
+    "lat": 26.3011857,
+    "lon": 50.1607821
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709262377,
+  "center": {
+    "lat": 26.3027929,
+    "lon": 50.1506514
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709262378,
+  "center": {
+    "lat": 26.3025521,
+    "lon": 50.1506416
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709262379,
+  "center": {
+    "lat": 26.3025971,
+    "lon": 50.1514561
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709262380,
+  "center": {
+    "lat": 26.3018724,
+    "lon": 50.1509602
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709384098,
+  "center": {
+    "lat": 26.3030805,
+    "lon": 50.1556312
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709628851,
+  "center": {
+    "lat": 26.3013258,
+    "lon": 50.1590399
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709628853,
+  "center": {
+    "lat": 26.3012578,
+    "lon": 50.1595844
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 709628854,
+  "center": {
+    "lat": 26.3008221,
+    "lon": 50.1593900
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 727097602,
+  "center": {
+    "lat": 26.3105491,
+    "lon": 50.1446238
+  },
+  "tags": {
+    "access": "students",
+    "addr:housenumber": "40",
+    "amenity": "restaurant",
+    "building": "yes",
+    "layer": "1",
+    "name": "مطعم الطلاب",
+    "name:en": "Student Restaurant",
+    "opening_hours": "6:00-8:30, Fr-Sa 7:00-9:30, 11:00-14:00, Fr 1:00-2:00, 18:00-20:30",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 1121871141,
+  "center": {
+    "lat": 26.3129011,
+    "lon": 50.1503103
+  },
+  "tags": {
+    "addr:housenumber": "701",
+    "alt_name": "مبنى 701",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 701",
+    "name:en": "Building 701",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 1134219202,
+  "center": {
+    "lat": 26.3107953,
+    "lon": 50.1487249
+  },
+  "tags": {
+    "addr:housenumber": "42",
+    "alt_name": "مبنى 42",
+    "building": "school",
+    "building:levels": "3",
+    "description": "Classrooms",
+    "name": "Building 42",
+    "name:ar": "مبنى 42",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 1134219340,
+  "center": {
+    "lat": 26.3114068,
+    "lon": 50.1492883
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "2",
+    "name": "61",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM"
+  }
+},
+{
+  "type": "way",
+  "id": 1239109924,
+  "center": {
+    "lat": 26.2993665,
+    "lon": 50.1607257
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239109981,
+  "center": {
+    "lat": 26.2988082,
+    "lon": 50.1539029
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239109985,
+  "center": {
+    "lat": 26.2991551,
+    "lon": 50.1588122
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239109995,
+  "center": {
+    "lat": 26.2991695,
+    "lon": 50.1604630
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110009,
+  "center": {
+    "lat": 26.2991381,
+    "lon": 50.1539512
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110067,
+  "center": {
+    "lat": 26.2993994,
+    "lon": 50.1592751
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110101,
+  "center": {
+    "lat": 26.2995163,
+    "lon": 50.1564804
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110161,
+  "center": {
+    "lat": 26.2991139,
+    "lon": 50.1578910
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110210,
+  "center": {
+    "lat": 26.2993516,
+    "lon": 50.1571493
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110211,
+  "center": {
+    "lat": 26.2987140,
+    "lon": 50.1607288
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110222,
+  "center": {
+    "lat": 26.2995709,
+    "lon": 50.1571830
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110267,
+  "center": {
+    "lat": 26.2996696,
+    "lon": 50.1604486
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110295,
+  "center": {
+    "lat": 26.2982337,
+    "lon": 50.1610404
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110309,
+  "center": {
+    "lat": 26.2992153,
+    "lon": 50.1537122
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110381,
+  "center": {
+    "lat": 26.3061087,
+    "lon": 50.1542117
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110388,
+  "center": {
+    "lat": 26.3033357,
+    "lon": 50.1575349
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110406,
+  "center": {
+    "lat": 26.3037627,
+    "lon": 50.1536846
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110417,
+  "center": {
+    "lat": 26.2998761,
+    "lon": 50.1536964
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110425,
+  "center": {
+    "lat": 26.3023131,
+    "lon": 50.1572891
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110428,
+  "center": {
+    "lat": 26.3031350,
+    "lon": 50.1556104
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110446,
+  "center": {
+    "lat": 26.3093107,
+    "lon": 50.1626525
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110447,
+  "center": {
+    "lat": 26.3020269,
+    "lon": 50.1545340
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110457,
+  "center": {
+    "lat": 26.3011513,
+    "lon": 50.1557830
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110458,
+  "center": {
+    "lat": 26.3026815,
+    "lon": 50.1547617
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110474,
+  "center": {
+    "lat": 26.3021685,
+    "lon": 50.1539975
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110479,
+  "center": {
+    "lat": 26.3094588,
+    "lon": 50.1623862
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110485,
+  "center": {
+    "lat": 26.3030477,
+    "lon": 50.1543027
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110490,
+  "center": {
+    "lat": 26.3033860,
+    "lon": 50.1545582
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110498,
+  "center": {
+    "lat": 26.3028092,
+    "lon": 50.1556961
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110512,
+  "center": {
+    "lat": 26.3027707,
+    "lon": 50.1566701
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110517,
+  "center": {
+    "lat": 26.3022794,
+    "lon": 50.1565449
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110520,
+  "center": {
+    "lat": 26.2998282,
+    "lon": 50.1560103
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110527,
+  "center": {
+    "lat": 26.3017585,
+    "lon": 50.1557190
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110534,
+  "center": {
+    "lat": 26.3033554,
+    "lon": 50.1548664
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110536,
+  "center": {
+    "lat": 26.3020570,
+    "lon": 50.1549634
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110552,
+  "center": {
+    "lat": 26.3042783,
+    "lon": 50.1536416
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110553,
+  "center": {
+    "lat": 26.3036205,
+    "lon": 50.1565056
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110558,
+  "center": {
+    "lat": 26.3024079,
+    "lon": 50.1544972
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110562,
+  "center": {
+    "lat": 26.3093142,
+    "lon": 50.1545197
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110564,
+  "center": {
+    "lat": 26.3091245,
+    "lon": 50.1621082
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110583,
+  "center": {
+    "lat": 26.3037798,
+    "lon": 50.1547151
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110637,
+  "center": {
+    "lat": 26.3087044,
+    "lon": 50.1561501
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110651,
+  "center": {
+    "lat": 26.3012481,
+    "lon": 50.1558933
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110657,
+  "center": {
+    "lat": 26.3024104,
+    "lon": 50.1549039
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110667,
+  "center": {
+    "lat": 26.3035317,
+    "lon": 50.1558514
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110674,
+  "center": {
+    "lat": 26.3082462,
+    "lon": 50.1603424
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110716,
+  "center": {
+    "lat": 26.3022793,
+    "lon": 50.1546271
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110720,
+  "center": {
+    "lat": 26.3009467,
+    "lon": 50.1555458
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110736,
+  "center": {
+    "lat": 26.3028574,
+    "lon": 50.1540935
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110737,
+  "center": {
+    "lat": 26.3029813,
+    "lon": 50.1543343
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110756,
+  "center": {
+    "lat": 26.3067066,
+    "lon": 50.1548611
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110767,
+  "center": {
+    "lat": 26.3047615,
+    "lon": 50.1542267
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110777,
+  "center": {
+    "lat": 26.3037852,
+    "lon": 50.1555905
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110781,
+  "center": {
+    "lat": 26.3032192,
+    "lon": 50.1572289
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110791,
+  "center": {
+    "lat": 26.3025659,
+    "lon": 50.1545175
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110816,
+  "center": {
+    "lat": 26.3024748,
+    "lon": 50.1575376
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110826,
+  "center": {
+    "lat": 26.3037954,
+    "lon": 50.1552366
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110830,
+  "center": {
+    "lat": 26.3021485,
+    "lon": 50.1549390
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110835,
+  "center": {
+    "lat": 26.3044657,
+    "lon": 50.1536672
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110860,
+  "center": {
+    "lat": 26.3024152,
+    "lon": 50.1563991
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110866,
+  "center": {
+    "lat": 26.3057726,
+    "lon": 50.1565402
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110883,
+  "center": {
+    "lat": 26.3071417,
+    "lon": 50.1551991
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110892,
+  "center": {
+    "lat": 26.3031673,
+    "lon": 50.1570261
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110893,
+  "center": {
+    "lat": 26.3099883,
+    "lon": 50.1540239
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110898,
+  "center": {
+    "lat": 26.3046950,
+    "lon": 50.1575266
+  },
+  "tags": {
+    "building": "yes",
+    "layer": "1",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110908,
+  "center": {
+    "lat": 26.3009119,
+    "lon": 50.1550957
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110916,
+  "center": {
+    "lat": 26.3021868,
+    "lon": 50.1543967
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110927,
+  "center": {
+    "lat": 26.3025661,
+    "lon": 50.1542709
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110929,
+  "center": {
+    "lat": 26.3003539,
+    "lon": 50.1536739
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110931,
+  "center": {
+    "lat": 26.3087597,
+    "lon": 50.1545466
+  },
+  "tags": {
+    "building": "yes",
+    "layer": "1",
+    "oneway": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110936,
+  "center": {
+    "lat": 26.3038704,
+    "lon": 50.1554115
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110942,
+  "center": {
+    "lat": 26.3035705,
+    "lon": 50.1572148
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110952,
+  "center": {
+    "lat": 26.3100611,
+    "lon": 50.1538292
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110963,
+  "center": {
+    "lat": 26.3025878,
+    "lon": 50.1574957
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110969,
+  "center": {
+    "lat": 26.3086210,
+    "lon": 50.1542834
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110972,
+  "center": {
+    "lat": 26.3028159,
+    "lon": 50.1540062
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110979,
+  "center": {
+    "lat": 26.3025489,
+    "lon": 50.1539177
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239110986,
+  "center": {
+    "lat": 26.3096949,
+    "lon": 50.1551816
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111001,
+  "center": {
+    "lat": 26.3058758,
+    "lon": 50.1564149
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111022,
+  "center": {
+    "lat": 26.3041939,
+    "lon": 50.1549812
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111025,
+  "center": {
+    "lat": 26.3062180,
+    "lon": 50.1544830
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111026,
+  "center": {
+    "lat": 26.3000788,
+    "lon": 50.1536169
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111040,
+  "center": {
+    "lat": 26.3037132,
+    "lon": 50.1572070
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111053,
+  "center": {
+    "lat": 26.3004143,
+    "lon": 50.1598982
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111058,
+  "center": {
+    "lat": 26.3022339,
+    "lon": 50.1568026
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111063,
+  "center": {
+    "lat": 26.3018175,
+    "lon": 50.1601101
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111094,
+  "center": {
+    "lat": 26.3024453,
+    "lon": 50.1542570
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111098,
+  "center": {
+    "lat": 26.3041060,
+    "lon": 50.1558232
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111100,
+  "center": {
+    "lat": 26.3023149,
+    "lon": 50.1543217
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111110,
+  "center": {
+    "lat": 26.3036963,
+    "lon": 50.1542538
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111114,
+  "center": {
+    "lat": 26.3060791,
+    "lon": 50.1550171
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111134,
+  "center": {
+    "lat": 26.3068769,
+    "lon": 50.1531382
+  },
+  "tags": {
+    "building": "yes",
+    "layer": "1",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111139,
+  "center": {
+    "lat": 26.2998691,
+    "lon": 50.1607666
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111149,
+  "center": {
+    "lat": 26.3040446,
+    "lon": 50.1562658
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111155,
+  "center": {
+    "lat": 26.2997352,
+    "lon": 50.1600400
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111156,
+  "center": {
+    "lat": 26.3021836,
+    "lon": 50.1560630
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111159,
+  "center": {
+    "lat": 26.3021245,
+    "lon": 50.1541936
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111161,
+  "center": {
+    "lat": 26.3024535,
+    "lon": 50.1554246
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111170,
+  "center": {
+    "lat": 26.3041355,
+    "lon": 50.1572142
+  },
+  "tags": {
+    "building": "carport",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111172,
+  "center": {
+    "lat": 26.3084079,
+    "lon": 50.1571281
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111175,
+  "center": {
+    "lat": 26.3021088,
+    "lon": 50.1570915
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111207,
+  "center": {
+    "lat": 26.3098139,
+    "lon": 50.1547796
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111214,
+  "center": {
+    "lat": 26.3041484,
+    "lon": 50.1551655
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111218,
+  "center": {
+    "lat": 26.3025246,
+    "lon": 50.1541742
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111219,
+  "center": {
+    "lat": 26.3081271,
+    "lon": 50.1559216
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111221,
+  "center": {
+    "lat": 26.3055599,
+    "lon": 50.1545810
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111223,
+  "center": {
+    "lat": 26.3039328,
+    "lon": 50.1560038
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111224,
+  "center": {
+    "lat": 26.3019069,
+    "lon": 50.1606961
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111233,
+  "center": {
+    "lat": 26.3023004,
+    "lon": 50.1606115
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111257,
+  "center": {
+    "lat": 26.3035171,
+    "lon": 50.1574205
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111285,
+  "center": {
+    "lat": 26.3029351,
+    "lon": 50.1565342
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111294,
+  "center": {
+    "lat": 26.3102359,
+    "lon": 50.1553203
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111310,
+  "center": {
+    "lat": 26.3064064,
+    "lon": 50.1541829
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111315,
+  "center": {
+    "lat": 26.3056672,
+    "lon": 50.1566629
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111325,
+  "center": {
+    "lat": 26.3027988,
+    "lon": 50.1537318
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111336,
+  "center": {
+    "lat": 26.3025161,
+    "lon": 50.1544922
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111342,
+  "center": {
+    "lat": 26.3082634,
+    "lon": 50.1565880
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111358,
+  "center": {
+    "lat": 26.3025058,
+    "lon": 50.1540656
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111377,
+  "center": {
+    "lat": 26.2997280,
+    "lon": 50.1608133
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111381,
+  "center": {
+    "lat": 26.3064627,
+    "lon": 50.1543135
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111394,
+  "center": {
+    "lat": 26.3080486,
+    "lon": 50.1569530
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111400,
+  "center": {
+    "lat": 26.3098217,
+    "lon": 50.1557335
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111420,
+  "center": {
+    "lat": 26.3086504,
+    "lon": 50.1548730
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111441,
+  "center": {
+    "lat": 26.3063535,
+    "lon": 50.1548105
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111453,
+  "center": {
+    "lat": 26.3086253,
+    "lon": 50.1569908
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111471,
+  "center": {
+    "lat": 26.3007744,
+    "lon": 50.1598075
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111476,
+  "center": {
+    "lat": 26.3002857,
+    "lon": 50.1549778
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111478,
+  "center": {
+    "lat": 26.3039239,
+    "lon": 50.1557142
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111492,
+  "center": {
+    "lat": 26.3003618,
+    "lon": 50.1551946
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111494,
+  "center": {
+    "lat": 26.3025082,
+    "lon": 50.1548040
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111520,
+  "center": {
+    "lat": 26.3013793,
+    "lon": 50.1558529
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111522,
+  "center": {
+    "lat": 26.3012492,
+    "lon": 50.1561492
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111556,
+  "center": {
+    "lat": 26.3091444,
+    "lon": 50.1629820
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111598,
+  "center": {
+    "lat": 26.3020931,
+    "lon": 50.1550723
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111600,
+  "center": {
+    "lat": 26.3026347,
+    "lon": 50.1569713
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111608,
+  "center": {
+    "lat": 26.3036762,
+    "lon": 50.1538676
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111613,
+  "center": {
+    "lat": 26.3009447,
+    "lon": 50.1557757
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111642,
+  "center": {
+    "lat": 26.3018742,
+    "lon": 50.1541353
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111648,
+  "center": {
+    "lat": 26.3020784,
+    "lon": 50.1548760
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111684,
+  "center": {
+    "lat": 26.3026127,
+    "lon": 50.1544447
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111685,
+  "center": {
+    "lat": 26.3052430,
+    "lon": 50.1566858
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111688,
+  "center": {
+    "lat": 26.3018063,
+    "lon": 50.1563375
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111697,
+  "center": {
+    "lat": 26.3017186,
+    "lon": 50.1599336
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111707,
+  "center": {
+    "lat": 26.3023011,
+    "lon": 50.1548571
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111712,
+  "center": {
+    "lat": 26.3078820,
+    "lon": 50.1572459
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111717,
+  "center": {
+    "lat": 26.3066331,
+    "lon": 50.1548057
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111721,
+  "center": {
+    "lat": 26.3086633,
+    "lon": 50.1627509
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111734,
+  "center": {
+    "lat": 26.3016232,
+    "lon": 50.1554972
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111760,
+  "center": {
+    "lat": 26.3030339,
+    "lon": 50.1577629
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111763,
+  "center": {
+    "lat": 26.3063748,
+    "lon": 50.1542700
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111769,
+  "center": {
+    "lat": 26.3038117,
+    "lon": 50.1562720
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111781,
+  "center": {
+    "lat": 26.3078634,
+    "lon": 50.1569767
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111782,
+  "center": {
+    "lat": 26.3006827,
+    "lon": 50.1550833
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111792,
+  "center": {
+    "lat": 26.3096961,
+    "lon": 50.1548474
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111798,
+  "center": {
+    "lat": 26.3008118,
+    "lon": 50.1553894
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111805,
+  "center": {
+    "lat": 26.3005653,
+    "lon": 50.1554129
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111807,
+  "center": {
+    "lat": 26.3024065,
+    "lon": 50.1567323
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111811,
+  "center": {
+    "lat": 26.3024759,
+    "lon": 50.1539655
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111818,
+  "center": {
+    "lat": 26.3020709,
+    "lon": 50.1572753
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111833,
+  "center": {
+    "lat": 26.3050720,
+    "lon": 50.1536413
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111838,
+  "center": {
+    "lat": 26.3018692,
+    "lon": 50.1567168
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111867,
+  "center": {
+    "lat": 26.3018231,
+    "lon": 50.1547060
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111881,
+  "center": {
+    "lat": 26.3018559,
+    "lon": 50.1560176
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111883,
+  "center": {
+    "lat": 26.3019510,
+    "lon": 50.1553769
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111901,
+  "center": {
+    "lat": 26.3034223,
+    "lon": 50.1550371
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111917,
+  "center": {
+    "lat": 26.3063491,
+    "lon": 50.1546199
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111921,
+  "center": {
+    "lat": 26.3007778,
+    "lon": 50.1545444
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111927,
+  "center": {
+    "lat": 26.3043381,
+    "lon": 50.1538540
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111941,
+  "center": {
+    "lat": 26.3017809,
+    "lon": 50.1542901
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111944,
+  "center": {
+    "lat": 26.3014119,
+    "lon": 50.1562584
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111963,
+  "center": {
+    "lat": 26.3048290,
+    "lon": 50.1563663
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111975,
+  "center": {
+    "lat": 26.3013946,
+    "lon": 50.1600753
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111989,
+  "center": {
+    "lat": 26.3019855,
+    "lon": 50.1555300
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111996,
+  "center": {
+    "lat": 26.3083735,
+    "lon": 50.1567170
+  },
+  "tags": {
+    "building": "yes",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239111997,
+  "center": {
+    "lat": 26.3027355,
+    "lon": 50.1603434
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112009,
+  "center": {
+    "lat": 26.3037729,
+    "lon": 50.1561004
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112010,
+  "center": {
+    "lat": 26.3041843,
+    "lon": 50.1544092
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112020,
+  "center": {
+    "lat": 26.3024186,
+    "lon": 50.1538995
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112024,
+  "center": {
+    "lat": 26.3012872,
+    "lon": 50.1560360
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112025,
+  "center": {
+    "lat": 26.3013193,
+    "lon": 50.1559338
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112035,
+  "center": {
+    "lat": 26.3010122,
+    "lon": 50.1554010
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112047,
+  "center": {
+    "lat": 26.2999292,
+    "lon": 50.1612416
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112049,
+  "center": {
+    "lat": 26.3019565,
+    "lon": 50.1549710
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112053,
+  "center": {
+    "lat": 26.3026243,
+    "lon": 50.1545474
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112058,
+  "center": {
+    "lat": 26.3045614,
+    "lon": 50.1544615
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112065,
+  "center": {
+    "lat": 26.3058788,
+    "lon": 50.1545276
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1239112071,
+  "center": {
+    "lat": 26.3043724,
+    "lon": 50.1562984
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1376780983,
+  "center": {
+    "lat": 26.3002658,
+    "lon": 50.1514846
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376858818,
+  "center": {
+    "lat": 26.3071347,
+    "lon": 50.1533227
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376858819,
+  "center": {
+    "lat": 26.3073466,
+    "lon": 50.1534553
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376858820,
+  "center": {
+    "lat": 26.3068109,
+    "lon": 50.1533551
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376858821,
+  "center": {
+    "lat": 26.3070186,
+    "lon": 50.1529754
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376858822,
+  "center": {
+    "lat": 26.3074568,
+    "lon": 50.1535332
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1376864842,
+  "center": {
+    "lat": 26.3051768,
+    "lon": 50.1567767
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376870771,
+  "center": {
+    "lat": 26.3039300,
+    "lon": 50.1574322
+  },
+  "tags": {
+    "building": "carport",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1376870772,
+  "center": {
+    "lat": 26.3040605,
+    "lon": 50.1573368
+  },
+  "tags": {
+    "building": "carport",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1376870773,
+  "center": {
+    "lat": 26.3042339,
+    "lon": 50.1571570
+  },
+  "tags": {
+    "building": "carport",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1376924734,
+  "center": {
+    "lat": 26.3005112,
+    "lon": 50.1485240
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376924735,
+  "center": {
+    "lat": 26.3001373,
+    "lon": 50.1481197
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376924736,
+  "center": {
+    "lat": 26.3001329,
+    "lon": 50.1480651
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376924737,
+  "center": {
+    "lat": 26.3001862,
+    "lon": 50.1485317
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376924738,
+  "center": {
+    "lat": 26.2999126,
+    "lon": 50.1485045
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925199,
+  "center": {
+    "lat": 26.2991423,
+    "lon": 50.1467783
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925200,
+  "center": {
+    "lat": 26.2991523,
+    "lon": 50.1474939
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925201,
+  "center": {
+    "lat": 26.2987704,
+    "lon": 50.1468560
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925202,
+  "center": {
+    "lat": 26.2989232,
+    "lon": 50.1475297
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925203,
+  "center": {
+    "lat": 26.2993127,
+    "lon": 50.1461788
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925204,
+  "center": {
+    "lat": 26.2991173,
+    "lon": 50.1461484
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925205,
+  "center": {
+    "lat": 26.2987127,
+    "lon": 50.1462619
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925206,
+  "center": {
+    "lat": 26.2994732,
+    "lon": 50.1471690
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925207,
+  "center": {
+    "lat": 26.2997065,
+    "lon": 50.1461582
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925208,
+  "center": {
+    "lat": 26.2997741,
+    "lon": 50.1471009
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925576,
+  "center": {
+    "lat": 26.2981850,
+    "lon": 50.1461719
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925577,
+  "center": {
+    "lat": 26.2982108,
+    "lon": 50.1463016
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925578,
+  "center": {
+    "lat": 26.2982356,
+    "lon": 50.1464341
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925579,
+  "center": {
+    "lat": 26.2982563,
+    "lon": 50.1465666
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925580,
+  "center": {
+    "lat": 26.2982821,
+    "lon": 50.1467036
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925581,
+  "center": {
+    "lat": 26.2983058,
+    "lon": 50.1468349
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925667,
+  "center": {
+    "lat": 26.2992482,
+    "lon": 50.1482896
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925668,
+  "center": {
+    "lat": 26.2991431,
+    "lon": 50.1482211
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925669,
+  "center": {
+    "lat": 26.2990409,
+    "lon": 50.1481555
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925670,
+  "center": {
+    "lat": 26.2989305,
+    "lon": 50.1480897
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925671,
+  "center": {
+    "lat": 26.2987463,
+    "lon": 50.1479825
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925672,
+  "center": {
+    "lat": 26.2986368,
+    "lon": 50.1479145
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925673,
+  "center": {
+    "lat": 26.2985314,
+    "lon": 50.1478408
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925674,
+  "center": {
+    "lat": 26.2984292,
+    "lon": 50.1477730
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925675,
+  "center": {
+    "lat": 26.2983291,
+    "lon": 50.1477003
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925676,
+  "center": {
+    "lat": 26.2982248,
+    "lon": 50.1476301
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925680,
+  "center": {
+    "lat": 26.2979638,
+    "lon": 50.1473922
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925681,
+  "center": {
+    "lat": 26.2980720,
+    "lon": 50.1475097
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925876,
+  "center": {
+    "lat": 26.2980158,
+    "lon": 50.1462960
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925877,
+  "center": {
+    "lat": 26.2980608,
+    "lon": 50.1465630
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925878,
+  "center": {
+    "lat": 26.2981078,
+    "lon": 50.1468296
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925882,
+  "center": {
+    "lat": 26.2980206,
+    "lon": 50.1470589
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925883,
+  "center": {
+    "lat": 26.2981442,
+    "lon": 50.1472680
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925884,
+  "center": {
+    "lat": 26.2983673,
+    "lon": 50.1474618
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925885,
+  "center": {
+    "lat": 26.2985691,
+    "lon": 50.1476048
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925886,
+  "center": {
+    "lat": 26.2987778,
+    "lon": 50.1477453
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925887,
+  "center": {
+    "lat": 26.2990616,
+    "lon": 50.1479315
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925888,
+  "center": {
+    "lat": 26.2992687,
+    "lon": 50.1480754
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925947,
+  "center": {
+    "lat": 26.2980212,
+    "lon": 50.1454089
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376925948,
+  "center": {
+    "lat": 26.2980440,
+    "lon": 50.1456796
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376927968,
+  "center": {
+    "lat": 26.2980165,
+    "lon": 50.1450416
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928366,
+  "center": {
+    "lat": 26.2983505,
+    "lon": 50.1453121
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928367,
+  "center": {
+    "lat": 26.2983648,
+    "lon": 50.1454862
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928368,
+  "center": {
+    "lat": 26.2983778,
+    "lon": 50.1456216
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928369,
+  "center": {
+    "lat": 26.2983884,
+    "lon": 50.1457579
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928370,
+  "center": {
+    "lat": 26.2981949,
+    "lon": 50.1457260
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928371,
+  "center": {
+    "lat": 26.2981683,
+    "lon": 50.1454552
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928506,
+  "center": {
+    "lat": 26.2981592,
+    "lon": 50.1450407
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928507,
+  "center": {
+    "lat": 26.2983499,
+    "lon": 50.1451064
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928508,
+  "center": {
+    "lat": 26.2983587,
+    "lon": 50.1449557
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928758,
+  "center": {
+    "lat": 26.2986848,
+    "lon": 50.1457456
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928759,
+  "center": {
+    "lat": 26.2986776,
+    "lon": 50.1456097
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928760,
+  "center": {
+    "lat": 26.2986673,
+    "lon": 50.1454749
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928761,
+  "center": {
+    "lat": 26.2986549,
+    "lon": 50.1453390
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928762,
+  "center": {
+    "lat": 26.2986581,
+    "lon": 50.1451359
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928763,
+  "center": {
+    "lat": 26.2986630,
+    "lon": 50.1449839
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928776,
+  "center": {
+    "lat": 26.2988513,
+    "lon": 50.1450583
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928777,
+  "center": {
+    "lat": 26.2988503,
+    "lon": 50.1453773
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376928778,
+  "center": {
+    "lat": 26.2988735,
+    "lon": 50.1456448
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929469,
+  "center": {
+    "lat": 26.2991838,
+    "lon": 50.1453632
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929470,
+  "center": {
+    "lat": 26.2991962,
+    "lon": 50.1455093
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929471,
+  "center": {
+    "lat": 26.2992016,
+    "lon": 50.1456416
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929472,
+  "center": {
+    "lat": 26.2991752,
+    "lon": 50.1452111
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929473,
+  "center": {
+    "lat": 26.2991770,
+    "lon": 50.1450579
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929478,
+  "center": {
+    "lat": 26.2990015,
+    "lon": 50.1449840
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929479,
+  "center": {
+    "lat": 26.2989891,
+    "lon": 50.1453257
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929480,
+  "center": {
+    "lat": 26.2990112,
+    "lon": 50.1456070
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929721,
+  "center": {
+    "lat": 26.3005183,
+    "lon": 50.1450874
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929722,
+  "center": {
+    "lat": 26.3005189,
+    "lon": 50.1452244
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929723,
+  "center": {
+    "lat": 26.3005180,
+    "lon": 50.1453626
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929724,
+  "center": {
+    "lat": 26.3005207,
+    "lon": 50.1454949
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929773,
+  "center": {
+    "lat": 26.3002434,
+    "lon": 50.1449688
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929774,
+  "center": {
+    "lat": 26.3002062,
+    "lon": 50.1451017
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929775,
+  "center": {
+    "lat": 26.3001735,
+    "lon": 50.1452304
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929804,
+  "center": {
+    "lat": 26.3000052,
+    "lon": 50.1451079
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929812,
+  "center": {
+    "lat": 26.3007141,
+    "lon": 50.1451414
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929813,
+  "center": {
+    "lat": 26.3007180,
+    "lon": 50.1454178
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929814,
+  "center": {
+    "lat": 26.3008624,
+    "lon": 50.1457646
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929815,
+  "center": {
+    "lat": 26.3008637,
+    "lon": 50.1454933
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929816,
+  "center": {
+    "lat": 26.3008624,
+    "lon": 50.1452233
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929817,
+  "center": {
+    "lat": 26.3008604,
+    "lon": 50.1449535
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929968,
+  "center": {
+    "lat": 26.3010549,
+    "lon": 50.1458171
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929969,
+  "center": {
+    "lat": 26.3010522,
+    "lon": 50.1456814
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929970,
+  "center": {
+    "lat": 26.3010509,
+    "lon": 50.1455472
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929971,
+  "center": {
+    "lat": 26.3010548,
+    "lon": 50.1454130
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929972,
+  "center": {
+    "lat": 26.3010470,
+    "lon": 50.1452773
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929973,
+  "center": {
+    "lat": 26.3010489,
+    "lon": 50.1451395
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1376929974,
+  "center": {
+    "lat": 26.3010470,
+    "lon": 50.1450023
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1377020072,
+  "center": {
+    "lat": 26.2982791,
+    "lon": 50.1485090
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1377020073,
+  "center": {
+    "lat": 26.2983462,
+    "lon": 50.1488877
+  },
+  "tags": {
+    "building": "house"
+  }
+},
+{
+  "type": "way",
+  "id": 1377020074,
+  "center": {
+    "lat": 26.2982074,
+    "lon": 50.1491524
+  },
+  "tags": {
+    "building": "house"
+  }
+},
+{
+  "type": "way",
+  "id": 1377020075,
+  "center": {
+    "lat": 26.2981099,
+    "lon": 50.1493513
+  },
+  "tags": {
+    "building": "house"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039912,
+  "center": {
+    "lat": 26.2994889,
+    "lon": 50.1534681
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039913,
+  "center": {
+    "lat": 26.2994182,
+    "lon": 50.1538329
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039914,
+  "center": {
+    "lat": 26.2994768,
+    "lon": 50.1531643
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039915,
+  "center": {
+    "lat": 26.2993459,
+    "lon": 50.1539603
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039916,
+  "center": {
+    "lat": 26.2987088,
+    "lon": 50.1534886
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039917,
+  "center": {
+    "lat": 26.2988405,
+    "lon": 50.1534616
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039918,
+  "center": {
+    "lat": 26.2990787,
+    "lon": 50.1534220
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039919,
+  "center": {
+    "lat": 26.2989442,
+    "lon": 50.1536378
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039920,
+  "center": {
+    "lat": 26.2993081,
+    "lon": 50.1534934
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039921,
+  "center": {
+    "lat": 26.2993100,
+    "lon": 50.1534070
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039922,
+  "center": {
+    "lat": 26.2988975,
+    "lon": 50.1532953
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039923,
+  "center": {
+    "lat": 26.2993170,
+    "lon": 50.1532957
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039924,
+  "center": {
+    "lat": 26.2987447,
+    "lon": 50.1538439
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039926,
+  "center": {
+    "lat": 26.2986151,
+    "lon": 50.1536777
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039927,
+  "center": {
+    "lat": 26.2987046,
+    "lon": 50.1537570
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039930,
+  "center": {
+    "lat": 26.2985789,
+    "lon": 50.1532160
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039932,
+  "center": {
+    "lat": 26.2988953,
+    "lon": 50.1526980
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039933,
+  "center": {
+    "lat": 26.2987526,
+    "lon": 50.1525818
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039934,
+  "center": {
+    "lat": 26.2989981,
+    "lon": 50.1528043
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039935,
+  "center": {
+    "lat": 26.2986412,
+    "lon": 50.1526318
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039936,
+  "center": {
+    "lat": 26.2989490,
+    "lon": 50.1529334
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377039937,
+  "center": {
+    "lat": 26.2989908,
+    "lon": 50.1525983
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040601,
+  "center": {
+    "lat": 26.2985708,
+    "lon": 50.1522708
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040603,
+  "center": {
+    "lat": 26.2990080,
+    "lon": 50.1513466
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040604,
+  "center": {
+    "lat": 26.2992406,
+    "lon": 50.1514063
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040605,
+  "center": {
+    "lat": 26.2987747,
+    "lon": 50.1514053
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040606,
+  "center": {
+    "lat": 26.2987068,
+    "lon": 50.1518635
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040607,
+  "center": {
+    "lat": 26.2986291,
+    "lon": 50.1521496
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040608,
+  "center": {
+    "lat": 26.2988438,
+    "lon": 50.1519609
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040609,
+  "center": {
+    "lat": 26.2988799,
+    "lon": 50.1516934
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040610,
+  "center": {
+    "lat": 26.2990474,
+    "lon": 50.1519705
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040611,
+  "center": {
+    "lat": 26.2992379,
+    "lon": 50.1517063
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040612,
+  "center": {
+    "lat": 26.2992166,
+    "lon": 50.1519724
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040613,
+  "center": {
+    "lat": 26.2992166,
+    "lon": 50.1521994
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040715,
+  "center": {
+    "lat": 26.2986035,
+    "lon": 50.1515304
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040717,
+  "center": {
+    "lat": 26.2994131,
+    "lon": 50.1513415
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377040718,
+  "center": {
+    "lat": 26.2996634,
+    "lon": 50.1513556
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042848,
+  "center": {
+    "lat": 26.2995405,
+    "lon": 50.1519792
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042849,
+  "center": {
+    "lat": 26.2996133,
+    "lon": 50.1518509
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042850,
+  "center": {
+    "lat": 26.2997630,
+    "lon": 50.1519873
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042851,
+  "center": {
+    "lat": 26.2995814,
+    "lon": 50.1516511
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042852,
+  "center": {
+    "lat": 26.2996612,
+    "lon": 50.1517695
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042853,
+  "center": {
+    "lat": 26.2993823,
+    "lon": 50.1516594
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042854,
+  "center": {
+    "lat": 26.2998238,
+    "lon": 50.1516345
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042855,
+  "center": {
+    "lat": 26.2998465,
+    "lon": 50.1514574
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042856,
+  "center": {
+    "lat": 26.2992414,
+    "lon": 50.1528817
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042857,
+  "center": {
+    "lat": 26.2994641,
+    "lon": 50.1527150
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042858,
+  "center": {
+    "lat": 26.2993614,
+    "lon": 50.1523228
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042859,
+  "center": {
+    "lat": 26.2995633,
+    "lon": 50.1523050
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377042860,
+  "center": {
+    "lat": 26.2997575,
+    "lon": 50.1524275
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377043559,
+  "center": {
+    "lat": 26.2999912,
+    "lon": 50.1523790
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377043560,
+  "center": {
+    "lat": 26.3000125,
+    "lon": 50.1526026
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377043561,
+  "center": {
+    "lat": 26.2997429,
+    "lon": 50.1527323
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377043562,
+  "center": {
+    "lat": 26.3000739,
+    "lon": 50.1521594
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377044990,
+  "center": {
+    "lat": 26.3001643,
+    "lon": 50.1532449
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377044991,
+  "center": {
+    "lat": 26.3001840,
+    "lon": 50.1528965
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377044992,
+  "center": {
+    "lat": 26.3003663,
+    "lon": 50.1531833
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1"
+  }
+},
+{
+  "type": "way",
+  "id": 1377044993,
+  "center": {
+    "lat": 26.3005442,
+    "lon": 50.1531836
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377044994,
+  "center": {
+    "lat": 26.3003496,
+    "lon": 50.1529685
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377044995,
+  "center": {
+    "lat": 26.3003540,
+    "lon": 50.1536490
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377044996,
+  "center": {
+    "lat": 26.3005228,
+    "lon": 50.1535222
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1377191296,
+  "center": {
+    "lat": 26.2979791,
+    "lon": 50.1498814
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1377191297,
+  "center": {
+    "lat": 26.2980662,
+    "lon": 50.1497878
+  },
+  "tags": {
+    "building": "residential"
+  }
+},
+{
+  "type": "way",
+  "id": 1377417623,
+  "center": {
+    "lat": 26.3091480,
+    "lon": 50.1492623
+  },
+  "tags": {
+    "building": "roof",
+    "layer": "1",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "police": "checkpoint"
+  }
+},
+{
+  "type": "way",
+  "id": 1381056917,
+  "center": {
+    "lat": 26.3020344,
+    "lon": 50.1479551
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1381056918,
+  "center": {
+    "lat": 26.3019201,
+    "lon": 50.1476242
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1381060407,
+  "center": {
+    "lat": 26.3006087,
+    "lon": 50.1478361
+  },
+  "tags": {
+    "building": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1428351021,
+  "center": {
+    "lat": 26.3137674,
+    "lon": 50.1474690
+  },
+  "tags": {
+    "amenity": "fast_food",
+    "brand": "دانكن",
+    "brand:ar": "دانكن",
+    "brand:en": "Dunkin'",
+    "brand:wikidata": "Q847743",
+    "building": "yes",
+    "cuisine": "donut;coffee_shop",
+    "layer": "1",
+    "name": "دانكن دونتس",
+    "name:ar": "دانكن دونتس",
+    "name:en": "Dunkin' Donuts",
+    "operator": "King Fahd University of Petroleum and Minerals",
+    "operator:short": "KFUPM",
+    "outdoor_seating": "yes",
+    "takeaway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709723,
+  "center": {
+    "lat": 26.3124310,
+    "lon": 50.1473393
+  },
+  "tags": {
+    "addr:housenumber": "815",
+    "alt_name": "مبنى 815",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 815",
+    "name:en": "Building 815"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709724,
+  "center": {
+    "lat": 26.3117182,
+    "lon": 50.1467248
+  },
+  "tags": {
+    "addr:housenumber": "814",
+    "alt_name": "مبنى 814",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 814",
+    "name:en": "Building 814"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709725,
+  "center": {
+    "lat": 26.3110082,
+    "lon": 50.1470128
+  },
+  "tags": {
+    "addr:housenumber": "813",
+    "alt_name": "مبنى 813",
+    "building": "dormitory",
+    "building:levels": "3",
+    "name": "عمارة 813",
+    "name:en": "Building 813"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709726,
+  "center": {
+    "lat": 26.3132451,
+    "lon": 50.1508356
+  },
+  "tags": {
+    "addr:housenumber": "81",
+    "alt_name": "مبنى 81",
+    "amenity": "parking",
+    "building": "yes",
+    "name": "Building 81",
+    "name:ar": "مبنى 81",
+    "parking": "multi-storey"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709727,
+  "center": {
+    "lat": 26.3129401,
+    "lon": 50.1514197
+  },
+  "tags": {
+    "addr:housenumber": "47",
+    "alt_name": "مبنى 47",
+    "building": "yes",
+    "name": "Building 47",
+    "name:ar": "مبنى 47"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709728,
+  "center": {
+    "lat": 26.3126277,
+    "lon": 50.1518155
+  },
+  "tags": {
+    "addr:housenumber": "46",
+    "alt_name": "مبنى 46",
+    "building": "yes",
+    "name": "Building 46",
+    "name:ar": "مبنى 46"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709729,
+  "center": {
+    "lat": 26.3139143,
+    "lon": 50.1519110
+  },
+  "tags": {
+    "addr:housenumber": "44",
+    "alt_name": "مبنى 44",
+    "building": "yes",
+    "name": "Building 44",
+    "name:ar": "مبنى 44"
+  }
+},
+{
+  "type": "way",
+  "id": 1430709731,
+  "center": {
+    "lat": 26.3148040,
+    "lon": 50.1488618
+  },
+  "tags": {
+    "addr:housenumber": "58",
+    "building": "yes",
+    "name": "مبنى 58",
+    "name:en": "Building 58"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932535,
+  "center": {
+    "lat": 26.3103801,
+    "lon": 50.1531076
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932536,
+  "center": {
+    "lat": 26.3110445,
+    "lon": 50.1481512
+  },
+  "tags": {
+    "amenity": "bus_station",
+    "building": "yes",
+    "bus": "yes",
+    "public_transport": "station",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932538,
+  "center": {
+    "lat": 26.3158787,
+    "lon": 50.1519356
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932539,
+  "center": {
+    "lat": 26.3050491,
+    "lon": 50.1521411
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932540,
+  "center": {
+    "lat": 26.3061803,
+    "lon": 50.1477326
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932543,
+  "center": {
+    "lat": 26.3083133,
+    "lon": 50.1456262
+  },
+  "tags": {
+    "amenity": "bus_station",
+    "building": "yes",
+    "bus": "yes",
+    "public_transport": "station",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932544,
+  "center": {
+    "lat": 26.3123649,
+    "lon": 50.1521585
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932548,
+  "center": {
+    "lat": 26.3158068,
+    "lon": 50.1527069
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932549,
+  "center": {
+    "lat": 26.3049367,
+    "lon": 50.1519921
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932552,
+  "center": {
+    "lat": 26.3099851,
+    "lon": 50.1533663
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932553,
+  "center": {
+    "lat": 26.3059231,
+    "lon": 50.1493113
+  },
+  "tags": {
+    "amenity": "bus_station",
+    "building": "yes",
+    "bus": "yes",
+    "public_transport": "station",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932555,
+  "center": {
+    "lat": 26.3050896,
+    "lon": 50.1532438
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932556,
+  "center": {
+    "lat": 26.3149301,
+    "lon": 50.1466971
+  },
+  "tags": {
+    "amenity": "bus_station",
+    "building": "yes",
+    "bus": "yes",
+    "public_transport": "station",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932558,
+  "center": {
+    "lat": 26.3060293,
+    "lon": 50.1535749
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932559,
+  "center": {
+    "lat": 26.3121870,
+    "lon": 50.1467397
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932561,
+  "center": {
+    "lat": 26.3156801,
+    "lon": 50.1528190
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932562,
+  "center": {
+    "lat": 26.3048920,
+    "lon": 50.1527951
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932563,
+  "center": {
+    "lat": 26.3156768,
+    "lon": 50.1524734
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932565,
+  "center": {
+    "lat": 26.3052100,
+    "lon": 50.1531948
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932566,
+  "center": {
+    "lat": 26.3138885,
+    "lon": 50.1499365
+  },
+  "tags": {
+    "amenity": "bus_station",
+    "building": "yes",
+    "bus": "yes",
+    "public_transport": "station",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932570,
+  "center": {
+    "lat": 26.3145543,
+    "lon": 50.1452478
+  },
+  "tags": {
+    "amenity": "bus_station",
+    "building": "yes",
+    "bus": "yes",
+    "public_transport": "station",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932573,
+  "center": {
+    "lat": 26.3147993,
+    "lon": 50.1476503
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932574,
+  "center": {
+    "lat": 26.3062916,
+    "lon": 50.1500668
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932577,
+  "center": {
+    "lat": 26.3103512,
+    "lon": 50.1532450
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932578,
+  "center": {
+    "lat": 26.3114501,
+    "lon": 50.1507673
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1430932579,
+  "center": {
+    "lat": 26.3098340,
+    "lon": 50.1531995
+  },
+  "tags": {
+    "building": "yes",
+    "source": "microsoft/BuildingFootprints"
+  }
+},
+{
+  "type": "way",
+  "id": 1431739738,
+  "center": {
+    "lat": 26.3145169,
+    "lon": 50.1492667
+  },
+  "tags": {
+    "addr:housenumber": "57",
+    "building": "yes",
+    "name": "Building 57 - Prepatory year",
+    "name:ar": "مبنى 57 - السنة التحضيرية"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479233,
+  "center": {
+    "lat": 26.3038236,
+    "lon": 50.1488802
+  },
+  "tags": {
+    "building": "yes",
+    "name": "مبنى 28 - معمل أبحاث الطاقة",
+    "office": "research"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479234,
+  "center": {
+    "lat": 26.3028228,
+    "lon": 50.1471818
+  },
+  "tags": {
+    "building": "dormitory",
+    "name": "1300 Female Students Dorms"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479235,
+  "center": {
+    "lat": 26.3028547,
+    "lon": 50.1474920
+  },
+  "tags": {
+    "building": "dormitory"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479236,
+  "center": {
+    "lat": 26.3029123,
+    "lon": 50.1478004
+  },
+  "tags": {
+    "building": "dormitory"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479237,
+  "center": {
+    "lat": 26.3024973,
+    "lon": 50.1471942
+  },
+  "tags": {
+    "building": "dormitory"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479238,
+  "center": {
+    "lat": 26.3025387,
+    "lon": 50.1475006
+  },
+  "tags": {
+    "building": "dormitory",
+    "name": "1400 Female Students Dorms"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479239,
+  "center": {
+    "lat": 26.3025974,
+    "lon": 50.1478117
+  },
+  "tags": {
+    "building": "dormitory"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479240,
+  "center": {
+    "lat": 26.3027187,
+    "lon": 50.1481222
+  },
+  "tags": {
+    "building": "dormitory",
+    "name": "1800 female students dorms"
+  }
+},
+{
+  "type": "way",
+  "id": 1448479241,
+  "center": {
+    "lat": 26.3030328,
+    "lon": 50.1481103
+  },
+  "tags": {
+    "building": "dormitory",
+    "name": "1900 kfupm"
+  }
+}
+
+  ]
+}
